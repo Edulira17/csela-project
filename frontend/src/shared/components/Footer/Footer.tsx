@@ -11,7 +11,7 @@ import {
 import { FaInstagram, FaFacebook } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
-import LogoCsela from "../../assets/LOGO CSELA.png";
+import LogoCsela from "./assets/LOGO CSELA.png";
 
 function Footer() {
   return (

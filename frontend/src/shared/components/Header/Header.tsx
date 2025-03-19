@@ -1,6 +1,8 @@
 import { HeaderContainer, HeaderNav, HeaderLink, HeaderTitle, HeaderLogo } from "./styles";
 
-import LogoCsela from '../../assets/LOGO CSELA.png'
+import LogoCsela from './assets/LOGO CSELA.png'
+
+
 
 const Header = () => {
   return (

@@ -1,4 +1,4 @@
-import Slider from "../../components/Slider/Slider";
+import Slider from "../../shared/components/Slider/Slider";
 import {
   HomeContainer,
   HomeContent,
@@ -13,9 +13,9 @@ import {
 import IllustrationIntro from "./assets/hello_ilustration.png";
 import IllustrationMission from "./assets/hand_in_hand.png";
 import projectsOfferedData from './projectsOfferedData'
-import ButtonLearnMore from "../../components/Buttons/CustomButton";
+import ButtonLearnMore from "../../shared/components/Buttons/CustomButton";
 
-const Home = ({}) => {
+const Home = () => {
   return (
     <HomeContainer>
       <SliderContainer>
