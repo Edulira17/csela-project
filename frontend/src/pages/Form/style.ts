@@ -13,7 +13,7 @@ export const ResponsiveContainerForm = styled.div`
 
 `;
 
-export const FormContainer = styled.div`
+export const FormContainer = styled.form`
   max-width: 1070px;
   width: 100%;
   margin: 0 auto;
