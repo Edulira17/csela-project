@@ -15,6 +15,8 @@ const Formulario = () => {
           <TextField label="Naturalidade" fullWidth margin="normal" />
           <TextField
             type="date"
+            label="Data de Nascimento"
+            InputLabelProps={{shrink: true}}
             fullWidth
             margin="normal"
           />
@@ -35,6 +37,15 @@ const Formulario = () => {
           <TextField label="RG" fullWidth margin="normal" />
           <TextField label="Telefone" fullWidth margin="normal" />
           <TextField label="E-mail" fullWidth margin="normal" />
+        </FormGroup>
+
+        <h2>ENDEREÇO</h2>
+        <FormGroup>
+          <TextField label="Rua" fullWidth margin="normal"/>
+          <TextField label="Bairro" fullWidth margin="normal"/>
+          <TextField label="Cidade" fullWidth margin="normal"/>
+          <TextField label="UF" fullWidth margin="normal"/>
+          <TextField label="CEP" fullWidth margin="normal"/>
         </FormGroup>
 
         <h2>INFORMAÇÕES ADICIONAIS</h2>
@@ -61,17 +72,18 @@ const Formulario = () => {
 
 
           <TextField label="Quantas pessoas moram na casa ?" select fullWidth margin="normal">
-            <MenuItem value="propria">Própria</MenuItem>
-            <MenuItem value="alugada">Alugada</MenuItem>
-            <MenuItem value="cedida">Cedida</MenuItem>
+            <MenuItem value="1">1 Pessoa</MenuItem>
+            <MenuItem value="2-3">2 a 3 Pessoas</MenuItem>
+            <MenuItem value="6-7">6 a 7 Pessoas</MenuItem>
+            <MenuItem value="8+">Mais de 8 Pessoas</MenuItem>
           </TextField>
         </FormGroup>
 
-
         <ActionsContainer>
-          <Button size="small" variant="contained" color="success">Fazer Matrícula</Button>
-          <Button size="small" variant="outlined" color="error">limpar</Button>
+          <Button size="medium" variant="contained" color="success">Fazer Matrícula</Button>
+          <Button size="medium" variant="outlined" color="error">limpar</Button>
         </ActionsContainer>
+
       </FormContainer>
     </ResponsiveContainerForm>
 
