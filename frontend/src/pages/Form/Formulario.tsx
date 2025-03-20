@@ -2,17 +2,15 @@ import { Button, MenuItem, TextField } from "@mui/material";
 import { FormContainer, FormGroup, ResponsiveContainerForm, ActionsContainer } from "./style";
 
 
-
-
-
 const Formulario = () => {
   return (
     <ResponsiveContainerForm>
       <FormContainer>
         <h2>DADOS DOS ALUNOS</h2>
         <FormGroup>
-          <TextField label="Nome do Aluno(a)" fullWidth margin="normal" />
+          <TextField label="Nome Completo do Aluno(a)" fullWidth margin="normal" />
           <TextField label="Naturalidade" fullWidth margin="normal" />
+          
           <TextField
             type="date"
             label="Data de Nascimento"
@@ -76,6 +74,19 @@ const Formulario = () => {
             <MenuItem value="2-3">2 a 3 Pessoas</MenuItem>
             <MenuItem value="6-7">6 a 7 Pessoas</MenuItem>
             <MenuItem value="8+">Mais de 8 Pessoas</MenuItem>
+          </TextField>
+
+          <TextField label="Recebe Auxilio do Governo ?" select fullWidth margin="normal">
+            <MenuItem value="sim">Sim</MenuItem>
+            <MenuItem value="nao">Não</MenuItem>
+          </TextField>
+          <TextField label="Podemos divulgar fotos e atividades do seu filho ?" select fullWidth margin="normal">
+            <MenuItem value="sim">Sim</MenuItem>
+            <MenuItem value="nao">Não</MenuItem>
+          </TextField>
+          <TextField label="Utiliza tranporte público ?" select fullWidth margin="normal">
+            <MenuItem value="sim">Sim</MenuItem>
+            <MenuItem value="nao">Não</MenuItem>
           </TextField>
         </FormGroup>
 
