@@ -1,6 +1,6 @@
 import * as yup from 'yup'
 
-export const additionalInfoSchema = yup.object({
+export const additionalInfoDataSchema = yup.object({
   oficina: yup.string().oneOf(["artes", "violao", "jiu-jitsu", "nivel 1", "nivel 2", "nivel 3"]).required(),
   turno: yup.string().oneOf(["matutino", "vespertino"]).required(),
   moradia: yup.string().oneOf(["propria", "alugada", "cedida"]).required(),

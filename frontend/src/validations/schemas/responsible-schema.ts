@@ -1,6 +1,6 @@
 import * as yup from 'yup'
 
-export const responsibleSchema = yup.object({
+export const responsibleDataSchema = yup.object({
   name: yup
     .string()
     .required()

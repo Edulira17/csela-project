@@ -1,7 +1,7 @@
 import * as yup from 'yup'
 
 
-export const addressSchema = yup.object({
+export const addressDataSchema = yup.object({
   rua: yup.string().required("A rua é obrigatória"),
   bairro: yup.string().required("O bairro é obrigatório"),
   cidade: yup.string().required("A cidade é obrigatória"),

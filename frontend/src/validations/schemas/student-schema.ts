@@ -10,7 +10,7 @@ export const studentDataSchema = yup.object({
       .required("A naturalidade é obrigatória!"),
   turno:
     yup.string()
-      .oneOf(["Matutino", "Vespertino"])
+      .oneOf(["", "Matutino", "Vespertino"])
       .required("O turno é obrigatório!"),
   dataNascimento: yup
     .date()
