@@ -28,6 +28,7 @@ export const studentDataSchema = yup.object({
     .required("O nome da escola é obrigatório"),
   serie: yup
     .string()
+    .min(3, "A escola deve ter pelo menos 3 caracteres")
     .required("A série é obrigatoria")
 });
 

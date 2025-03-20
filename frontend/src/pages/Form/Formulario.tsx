@@ -86,18 +86,24 @@ const Formulario = () => {
                 error={!!errors.student?.turno}
                 helperText={errors.student?.turno?.message}
               >
-                <MenuItem value="manha">Manhã</MenuItem>
-                <MenuItem value="tarde">Tarde</MenuItem>
-                <MenuItem value="noite">Noite</MenuItem>
+                <MenuItem value=""></MenuItem>
+                <MenuItem value="manha">Matutino</MenuItem>
+                <MenuItem value="tarde">Vespertino</MenuItem>
               </TextField>
             )}
           />
-
         </FormGroup>
 
         <h2>DADOS DO RESPONSÁVEL</h2>
         <FormGroup>
-          <TextField label="Nome do Responsável" fullWidth margin="normal" />
+          <TextField 
+            label="Nome do Responsável" 
+            fullWidth 
+            margin="normal" 
+            {...register("guardian.name")}
+            error={!!errors.guardian?.name}
+            helperText={errors.guardian?.name?.message}
+          />
           <TextField label="CPF" fullWidth margin="normal" />
           <TextField label="RG" fullWidth margin="normal" />
           <TextField label="Telefone" fullWidth margin="normal" />
