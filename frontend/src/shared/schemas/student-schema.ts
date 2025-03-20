@@ -25,6 +25,9 @@ export const studentSchema = yup.object().shape({
     .required("A idade é obrigatória"),
   escola: yup
     .string()
-    .required("O nome da escola é obrigatório")
-
+    .required("O nome da escola é obrigatório"),
+  serie: yup
+    .string()
+    .required("A série é obrigatoria")
+  
 })
