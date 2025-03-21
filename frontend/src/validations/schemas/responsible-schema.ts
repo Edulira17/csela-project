@@ -3,7 +3,7 @@ import * as yup from 'yup'
 export const responsibleDataSchema = yup.object({
   name: yup
     .string()
-    .required()
+    .required("O nome do responsável é obrigatório")
     .min(3, "O nome deve ter pelo menos 3 caracteres"),
   cpf: yup
     .string()

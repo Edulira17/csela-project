@@ -11,8 +11,17 @@ import { sendFormData } from "../../shared/utils/sendFormData";
 const Formulario = () => {
   const { register, control, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(registrationFormSchema),
+    defaultValues: {
+      student: {
+        name: "",
+        naturalidade: "",
+        escola: "",
+        serie: "",
+      }
+    }
+  });
 
-  })
+
 
 
   return (
@@ -75,7 +84,6 @@ const Formulario = () => {
           <Controller
             name="student.turno"
             control={control}
-            defaultValue=""
             render={({ field }) => (
               <TextField
                 {...field}
@@ -86,7 +94,9 @@ const Formulario = () => {
                 error={!!errors.student?.turno}
                 helperText={errors.student?.turno?.message}
               >
-                <MenuItem value=""></MenuItem>
+                <MenuItem value="" disabled>
+                  Selecione o turno
+                </MenuItem>
                 <MenuItem value="manha">Matutino</MenuItem>
                 <MenuItem value="tarde">Vespertino</MenuItem>
               </TextField>
@@ -104,7 +114,7 @@ const Formulario = () => {
             error={!!errors.guardian?.name}
             helperText={errors.guardian?.name?.message}
           />
-          <TextField label="CPF" fullWidth margin="normal" />
+          <TextField type="number" label="CPF" fullWidth margin="normal" />
           <TextField label="RG" fullWidth margin="normal" />
           <TextField label="Telefone" fullWidth margin="normal" />
           <TextField label="E-mail" fullWidth margin="normal" />
