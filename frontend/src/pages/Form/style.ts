@@ -54,33 +54,33 @@ export const FormGroup = styled.div`
   }
 `;
 
-export const Label = styled.label`
-  display: block;
-  font-weight: bold;
-  margin: 10px 0 5px;
-`;
+// export const Label = styled.label`
+//   display: block;
+//   font-weight: bold;
+//   margin: 10px 0 5px;
+// `;
 
-export const Input = styled.input`
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 10px;
-`;
+// export const Input = styled.input`
+//   width: 100%;
+//   padding: 8px;
+//   border: 1px solid #ccc;
+//   border-radius: 5px;
+//   margin-bottom: 10px;
+// `;
 
 export const CustomInput = styled(InputMask)`
   width: 100%;
-  padding: 8px;
+  padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 10px;
 
 `
 
-export const Select = styled.select`
-  width: 70%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 10px;
-`;
+// export const Select = styled.select`
+//   width: 70%;
+//   padding: 8px;
+//   border: 1px solid #ccc;
+//   border-radius: 5px;
+//   margin-bottom: 10px;
+// `;

@@ -17,11 +17,9 @@ const Formulario = () => {
         naturalidade: "",
         escola: "",
         serie: "",
-      }
+      },
     }
   });
-
-
 
 
   return (
@@ -31,6 +29,7 @@ const Formulario = () => {
         <FormGroup>
           <TextField
             label="Nome Completo do Aluno(a)"
+            type="text"
             fullWidth margin="normal"
             {...register("student.name")}
             error={!!errors.student?.name}
@@ -38,6 +37,7 @@ const Formulario = () => {
           />
           <TextField
             label="Naturalidade"
+            type="text"
             fullWidth margin="normal"
             {...register("student.naturalidade")}
             error={!!errors.student?.naturalidade}
@@ -84,6 +84,7 @@ const Formulario = () => {
           <Controller
             name="student.turno"
             control={control}
+            defaultValue={undefined}
             render={({ field }) => (
               <TextField
                 {...field}
@@ -97,8 +98,8 @@ const Formulario = () => {
                 <MenuItem value="" disabled>
                   Selecione o turno
                 </MenuItem>
-                <MenuItem value="manha">Matutino</MenuItem>
-                <MenuItem value="tarde">Vespertino</MenuItem>
+                <MenuItem value="vespertino">Vespertino</MenuItem>
+                <MenuItem value="matutino">Manhã</MenuItem>
               </TextField>
             )}
           />
@@ -106,10 +107,10 @@ const Formulario = () => {
 
         <h2>DADOS DO RESPONSÁVEL</h2>
         <FormGroup>
-          <TextField 
-            label="Nome do Responsável" 
-            fullWidth 
-            margin="normal" 
+          <TextField
+            label="Nome do Responsável"
+            fullWidth
+            margin="normal"
             {...register("guardian.name")}
             error={!!errors.guardian?.name}
             helperText={errors.guardian?.name?.message}
