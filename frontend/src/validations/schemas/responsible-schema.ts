@@ -11,7 +11,8 @@ export const responsibleDataSchema = yup.object({
     .required("O CPF é obrigatório"),
   rg: yup
     .string()
-    .matches(/^\d+$/, "O RG deve conter apenas números").required("O RG é obrigatório"),
+    .matches(/^\d{8,9}$/, "Adicione um documento válido")
+    .required("O RG é obrigatório"),
   telefone: yup
     .string()
     .matches(/^\d{10,11}$/, "Digite um número de telefone válido com DDD")

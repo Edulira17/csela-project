@@ -4,6 +4,7 @@ import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from "@hookform/resolvers/yup";
 import { registrationFormSchema } from "../../validations/schemas/registration-form-schema";
 import { sendFormData } from "../../shared/utils/sendFormData";
+import CustomInputMask from "../../shared/components/InputMask/InputMask";
 
 
 
@@ -38,7 +39,8 @@ const Formulario = () => {
           <TextField
             label="Naturalidade"
             type="text"
-            fullWidth margin="normal"
+            fullWidth 
+            margin="normal"
             {...register("student.naturalidade")}
             error={!!errors.student?.naturalidade}
             helperText={errors.student?.naturalidade?.message}
@@ -115,10 +117,17 @@ const Formulario = () => {
             error={!!errors.guardian?.name}
             helperText={errors.guardian?.name?.message}
           />
-          <TextField type="number" label="CPF" fullWidth margin="normal" />
-          <TextField label="RG" fullWidth margin="normal" />
-          <TextField label="Telefone" fullWidth margin="normal" />
-          <TextField label="E-mail" fullWidth margin="normal" />
+          <CustomInputMask  mask="999.999.999-99" label="CPF"/>
+          <CustomInputMask mask="9999999-9" label="RG"/>
+          <CustomInputMask mask="99 99999-9999" label="Telefone"/>
+          <TextField 
+            label="E-mail" 
+            fullWidth 
+            margin="normal" 
+            {...register("guardian.email")}
+            error={!!errors.guardian?.email}
+            helperText={errors.guardian?.email?.message}
+          />
         </FormGroup>
 
         <h2>ENDEREÇO</h2>
