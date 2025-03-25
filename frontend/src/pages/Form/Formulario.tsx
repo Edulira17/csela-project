@@ -28,14 +28,17 @@ const Formulario = () => {
           <Label>Naturalidade</Label>
           <Input
             type="string"
+            {...register("student.naturalidade")}
           />
           <Label>Idade</Label>
           <Input
             type="number"
+            {...register("student.idade")}
           />
           <Label>Data de Nascimento</Label>
           <Input
             type="date"
+            {...register("student.dataNascimento")}
           />
           <Label>Nome da Escola</Label>
           <Input
@@ -56,7 +59,7 @@ const Formulario = () => {
         </FormGroup>
 
         <ActionsContainer>
-          <Button size="medium" variant="contained" color="success" type="submit">Fazer Matrícula</Button>
+          <Button size="medium" variant="contained" color="success" type="submit">Próximo</Button>
           <Button size="medium" variant="outlined" color="error" onClick={() => reset()}>Limpar</Button>
         </ActionsContainer>
       </FormContainer>
