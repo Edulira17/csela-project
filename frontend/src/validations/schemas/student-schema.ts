@@ -14,6 +14,7 @@ export const studentDataSchema = yup.object({
   turno: yup
     .string()
     .oneOf(["matutino", "vespertino"], "Selecione um turno válido")
+    .nullable()
     .required("O turno é obrigatório!"),
 
   dataNascimento: yup

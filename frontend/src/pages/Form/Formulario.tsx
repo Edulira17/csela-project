@@ -1,5 +1,6 @@
-import { Button, MenuItem, TextField } from "@mui/material";
-import { FormContainer, FormGroup, ResponsiveContainerForm, ActionsContainer } from "./style";
+import { Button } from "@mui/material";
+import { FormContainer, FormGroup, ResponsiveContainerForm, ActionsContainer, Input, Select, Label } from "./style";
+
 import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from "@hookform/resolvers/yup";
 import { registrationFormSchema } from "../../validations/schemas/registration-form-schema";
@@ -18,43 +19,40 @@ const Formulario = () => {
       <FormContainer onSubmit={handleSubmit(sendFormData)}>
         <h2>DADOS DOS ALUNOS</h2>
         <FormGroup>
-          <TextField label="Nome Completo" fullWidth margin="normal"
+          <Label>Nome Completo</Label>
+          <Input 
+            type="string" 
             {...register("student.name")}
-            error={!!errors.student?.name}
-            helperText={errors.student?.name?.message}
+
           />
-          <TextField label="Naturalidade" fullWidth margin="normal"
-            {...register("student.naturalidade")}
-            error={!!errors.student?.naturalidade}
-            helperText={errors.student?.naturalidade?.message}
+          <Label>Naturalidade</Label>
+          <Input
+            type="string"
           />
-          <TextField type="date" label="Data de Nascimento" InputLabelProps={{ shrink: true }} fullWidth margin="normal"
-            {...register("student.dataNascimento")}
-            error={!!errors.student?.dataNascimento}
-            helperText={errors.student?.dataNascimento?.message}
+          <Label>Idade</Label>
+          <Input
+            type="number"
           />
-          <TextField label="Idade" type="number" fullWidth margin="normal"
-            {...register("student.idade")}
-            error={!!errors.student?.idade}
-            helperText={errors.student?.idade?.message}
+          <Label>Data de Nascimento</Label>
+          <Input
+            type="date"
           />
-          <TextField label="Nome da Escola" fullWidth margin="normal"
-            {...register("student.escola")}
-            error={!!errors.student?.escola}
-            helperText={errors.student?.escola?.message}
+          <Label>Nome da Escola</Label>
+          <Input
+            type="string"
           />
-          <TextField label="Série" type="text" fullWidth margin="normal"
-            {...register("student.serie")}
-            error={!!errors.student?.serie}
-            helperText={errors.student?.serie?.message}
+          <Label>Série</Label>
+          <Input
+            type="number"
           />
-          <Controller name="student.turno" control={control} render={({ field }) => (
-            <TextField {...field} label="Turno" select fullWidth margin="normal"
+          {/* <Controller name="student.turno" control={control} render={({ field }) => (
+            <Input {...field} label="Turno" select fullWidth margin="normal"
               error={!!errors.student?.turno} helperText={errors.student?.turno?.message}>
-              <MenuItem value="matutino">Matutino</MenuItem>
-              <MenuItem value="vespertino">Vespertino</MenuItem>
-            </TextField>
-          )} />
+              <Select value="matutino">Matutino</Select>
+              <Select value="vespertino">Vespertino</Select>
+            </Input>
+          )}
+          /> */}
         </FormGroup>
 
         <ActionsContainer>
