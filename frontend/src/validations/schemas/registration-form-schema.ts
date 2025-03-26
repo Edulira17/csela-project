@@ -6,8 +6,8 @@ import { additionalInfoDataSchema } from './additional-info-schema'
 
 export const registrationFormSchema = yup.object({
   student: studentDataSchema,
-  guardian: responsibleDataSchema,
-  address: addressDataSchema,
-  additionalInfo: additionalInfoDataSchema
+  // guardian: responsibleDataSchema,
+  // address: addressDataSchema,
+  // additionalInfo: additionalInfoDataSchema
 });
 

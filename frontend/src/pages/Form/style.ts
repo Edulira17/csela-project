@@ -46,12 +46,6 @@ export const FormGroup = styled.div`
   margin-bottom: 15px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
-  .school-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
 `;
 
 export const Label = styled.label`
@@ -60,12 +54,16 @@ export const Label = styled.label`
   margin: 10px 0 5px;
 `;
 
-export const Input = styled.input`
+export const Input = styled.input.withConfig({
+  shouldForwardProp: (prop) => !["ref", "_owner", "_store"].includes(prop),
+})`
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 8px;
   margin-bottom: 10px;
+  background: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
 export const CustomInput = styled(InputMask)`
@@ -74,11 +72,13 @@ export const CustomInput = styled(InputMask)`
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 10px;
+  background: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
 `
 
 export const Select = styled.select`
-  width: 70%;
+  width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;

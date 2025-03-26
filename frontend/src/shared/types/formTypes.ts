@@ -7,10 +7,10 @@ export interface StudentTypes {
   turno: string;
 };
 
-export interface GuardianTypes {
-  name: string;
-  phone: number;
-  rg: string
-  cpf: string
-}
+// export interface GuardianTypes {
+//   name: string;
+//   phone: number;
+//   rg: string
+//   cpf: string
+// }
 
