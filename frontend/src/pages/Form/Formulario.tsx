@@ -21,15 +21,20 @@ const Formulario = () => {
             className={errors?.name?.type && "input-error"}
             type="text"
             {...register("name", {
-              required: "O nome é obrigatório"
+              required: true,
+              validate: (value) => /^[A-Za-zÀ-ÿ\s]+$/.test(value) || "Apenas letras são permitidas"
             })}
           />
-          {errors?.name?.type && <span className="error-message">Name is required</span>}
+          {errors?.name?.type && <span className="error-message">O nome é obrigatório</span>}
           <Label>Naturalidade</Label>
           <Input
+            className={errors?.naturalidade?.type && "input-error"}
             type="text"
-            {...register("naturalidade")}
+            {...register("naturalidade", {
+              required: true
+            })}
           />
+          {errors?.naturalidade?.type === "required" && <span className="error-message">Naturalidade é obrigatória</span>}
           <Label>Idade</Label>
           <Input
             type="number"
