@@ -7,9 +7,9 @@ import { sendFormData } from "../../shared/utils/sendFormData";
 
 const Formulario = () => {
 
-  const { register, handleSubmit } = useForm({});
+  const { register, handleSubmit, formState: { errors } } = useForm({});
 
-  // console.log(errors)
+  console.log({ errors })
 
   return (
     <ResponsiveContainerForm>
@@ -18,9 +18,13 @@ const Formulario = () => {
         <FormGroup>
           <Label>Nome Completo</Label>
           <Input
+            className={errors?.name?.type && "input-error"}
             type="text"
-            {...register("name")}
+            {...register("name", {
+              required: "O nome é obrigatório"
+            })}
           />
+          {errors?.name?.type && <span className="error-message">Name is required</span>}
           <Label>Naturalidade</Label>
           <Input
             type="text"
@@ -30,6 +34,7 @@ const Formulario = () => {
           <Input
             type="number"
             {...register("idade")}
+
           />
           <Label>Data de Nascimento</Label>
           <Input
@@ -47,14 +52,11 @@ const Formulario = () => {
             {...register("serie")}
           />
           <Label>Turno</Label>
-
           <Select >
             <option value="">Selecione um turno</option>
             <option value="matutino">Matutino</option>
             <option value="vespertino">Vespertino</option>
           </Select>
-
-
         </FormGroup>
 
         <ActionsContainer>

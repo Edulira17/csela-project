@@ -46,6 +46,16 @@ export const FormGroup = styled.div`
   margin-bottom: 15px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  .input-error {
+    outline: 1px solid rgb(255, 72, 72);
+  }
+
+  .error-message {
+    color: rgb(255, 72, 72);
+    font-size: 0.75rem;
+    margin-top: 8px;
+  }
 `;
 
 export const Label = styled.label`
