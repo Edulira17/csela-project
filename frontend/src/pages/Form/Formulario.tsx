@@ -1,23 +1,13 @@
 import { Button } from "@mui/material";
 import { FormContainer, FormGroup, ResponsiveContainerForm, ActionsContainer, Input, Select, Label } from "./style";
-
-import { Controller, useForm } from 'react-hook-form'
-import { yupResolver } from "@hookform/resolvers/yup";
-import { registrationFormSchema } from "../../validations/schemas/registration-form-schema";
+import { useForm } from 'react-hook-form'
 import { sendFormData } from "../../shared/utils/sendFormData";
 
 
 
-
 const Formulario = () => {
-  const { register, handleSubmit, control, formState: { errors } } = useForm({
-    defaultValues: {
-      student: {
-        turno: undefined
-      }
-    },
-    resolver: yupResolver(registrationFormSchema)
-  });
+
+  const { register, handleSubmit } = useForm({});
 
   // console.log(errors)
 
@@ -29,53 +19,42 @@ const Formulario = () => {
           <Label>Nome Completo</Label>
           <Input
             type="text"
-            {...register("student.name")}
+            {...register("name")}
           />
-          {errors.student?.name && <p>{errors.student.name.message}</p>}
           <Label>Naturalidade</Label>
           <Input
             type="text"
-            {...register("student.naturalidade")}
+            {...register("naturalidade")}
           />
-          {errors.student?.naturalidade && <p>{errors.student.naturalidade.message}</p>}
           <Label>Idade</Label>
           <Input
             type="number"
-            {...register("student.idade")}
+            {...register("idade")}
           />
-          {errors.student?.idade && <p>{errors.student.idade.message}</p>}
           <Label>Data de Nascimento</Label>
           <Input
             type="date"
-            {...register("student.dataNascimento")}
+            {...register("dataNascimento")}
           />
-          {errors.student?.dataNascimento && <p>{errors.student.dataNascimento.message}</p>}
           <Label>Nome da Escola</Label>
           <Input
             type="text"
-            {...register("student.escola")}
+            {...register("escola")}
           />
-          {errors.student?.escola && <p>{errors.student.escola.message}</p>}
           <Label>Série</Label>
           <Input
             type="number"
-            {...register("student.serie")}
+            {...register("serie")}
           />
-          {errors.student?.serie && <p>{errors.student.serie.message}</p>}
-          {/* ADD CONTROLLER */}
           <Label>Turno</Label>
-          <Controller
-            name="student.turno"
-            control={control}
-            rules={{ required: "O turno é obrigatório" }}
-            render={({ field }) => (
-              <Select {...field}>
-                <option value="" disabled>Selecione um turno</option>
-                <option value="matutino">Matutino</option>
-                <option value="vespertino">Vespertino</option>
-              </Select>
-            )}
-          />
+
+          <Select >
+            <option value="">Selecione um turno</option>
+            <option value="matutino">Matutino</option>
+            <option value="vespertino">Vespertino</option>
+          </Select>
+
+
         </FormGroup>
 
         <ActionsContainer>

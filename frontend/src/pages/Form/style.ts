@@ -54,9 +54,7 @@ export const Label = styled.label`
   margin: 10px 0 5px;
 `;
 
-export const Input = styled.input.withConfig({
-  shouldForwardProp: (prop) => !["ref", "_owner", "_store"].includes(prop),
-})`
+export const Input = styled.input`
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
