@@ -48,7 +48,7 @@ export const FormGroup = styled.div`
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
   .input-error {
-    outline: 1px solid rgb(255, 72, 72);
+    outline: 2px solid rgb(255, 72, 72);
   }
 
   .error-message {
@@ -82,7 +82,6 @@ export const CustomInput = styled(InputMask)`
   margin-bottom: 10px;
   background: #f9f9f9;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
 `
 
 export const Select = styled.select`

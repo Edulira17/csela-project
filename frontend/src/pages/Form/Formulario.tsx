@@ -3,11 +3,11 @@ import { FormContainer, FormGroup, ResponsiveContainerForm, ActionsContainer, In
 import { useForm } from 'react-hook-form'
 import { sendFormData } from "../../shared/utils/sendFormData";
 
-
+// add use-masked-input
 
 const Formulario = () => {
 
-  const { register, handleSubmit, formState: { errors } } = useForm({});
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
   console.log({ errors })
 
@@ -21,30 +21,57 @@ const Formulario = () => {
             className={errors?.name?.type && "input-error"}
             type="text"
             {...register("name", {
-              required: true,
-              validate: (value) => /^[A-Za-zÀ-ÿ\s]+$/.test(value) || "Apenas letras são permitidas"
+              required: "O nome é obrigatório",
+              validate: (value) => /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/.test(value) || "O nome deve conter apenas letras e espaços"
             })}
+
           />
-          {errors?.name?.type && <span className="error-message">O nome é obrigatório</span>}
+          {errors.name && (
+            <span className="error-message">{errors.name?.message as string}</span>
+          )}
           <Label>Naturalidade</Label>
           <Input
             className={errors?.naturalidade?.type && "input-error"}
             type="text"
             {...register("naturalidade", {
-              required: true
+              required: "A naturalidade é obrigatória",
+              validate: (value) => /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/.test(value) || "A naturalidade deve conter apenas letras e espaços"
             })}
           />
-          {errors?.naturalidade?.type === "required" && <span className="error-message">Naturalidade é obrigatória</span>}
+          {errors.naturalidade && (
+            <span className="error-message">{errors.naturalidade?.message as string}</span>
+          )}
           <Label>Idade</Label>
           <Input
+            className={errors?.idade?.type && "input-error"}
             type="number"
-            {...register("idade")}
-
+            {...register("idade", {
+              required: "A idade é obrigatória",
+              min: {
+                value: 7,
+                message: "A idade miníma é 7 anos"
+              },
+              max: {
+                value: 17,
+                message: "A idade máxima é 17 anos"
+              }
+            })}
           />
+          {errors.idade && (
+            <span className="error-message">{errors.idade?.message as string}</span>
+          )}
           <Label>Data de Nascimento</Label>
           <Input
             type="date"
-            {...register("dataNascimento")}
+            {...register("dataNascimento", {
+              required: "A data de nascimento é obrigatória",
+              validate: (value) => {
+                const dataNascimento = new Date(value);
+                const dataAtual = new Date();
+                const idade = dataAtual.getFullYear() - dataNascimento.getFullYear();
+                return idade >= 7 && idade <= 17 || "A idade deve estar entre 7 e 17 anos";
+              }
+            })}
           />
           <Label>Nome da Escola</Label>
           <Input
