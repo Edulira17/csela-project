@@ -2,6 +2,7 @@ import { Button } from "@mui/material";
 import { FormContainer,  ResponsiveContainerForm, ActionsContainer } from "./style";
 import StudentSection from "../../shared/components/FormSections/StudentSection";
 import ResponsibleSection from "../../shared/components/FormSections/ResponsibleSection";
+import AddressSection from "../../shared/components/FormSections/AddressSection";
 
 // add use-masked-input
 
@@ -14,7 +15,9 @@ const Formulario = () => {
         <StudentSection />
         <h2>DADOS DO RESPONSÁVEL</h2>
         <ResponsibleSection />
-
+        <h2>ENDEREÇO</h2>
+        <AddressSection />
+        <h2>INFORMAÇÕES ADICIONAIS</h2>
         <ActionsContainer>
           <Button size="medium" variant="contained" color="success" type="submit">Submit</Button>
         </ActionsContainer>
