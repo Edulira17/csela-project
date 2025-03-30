@@ -3,6 +3,7 @@ import { FormContainer,  ResponsiveContainerForm, ActionsContainer } from "./sty
 import StudentSection from "../../shared/components/FormSections/StudentSection";
 import ResponsibleSection from "../../shared/components/FormSections/ResponsibleSection";
 import AddressSection from "../../shared/components/FormSections/AddressSection";
+import AdditionalInfo from "../../shared/components/FormSections/AdditionalInfo";
 
 // add use-masked-input
 
@@ -18,7 +19,10 @@ const Formulario = () => {
         <h2>ENDEREÇO</h2>
         <AddressSection />
         <h2>INFORMAÇÕES ADICIONAIS</h2>
+        <AdditionalInfo />
         <ActionsContainer>
+          <Button size="medium" variant="contained" color="success" type="submit">Submit</Button>
+          <Button size="medium" variant="contained" color="success" type="submit">Submit</Button>
           <Button size="medium" variant="contained" color="success" type="submit">Submit</Button>
         </ActionsContainer>
       </FormContainer>

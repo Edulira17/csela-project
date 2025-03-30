@@ -30,9 +30,11 @@ export const FormContainer = styled.form`
 `;
 
 export const ActionsContainer = styled.div`
-  width: 80%;	
+  width: 100%;	
   display: flex;
-  gap: 1rem;
+  justify-content: space-around;
+  
+  padding: 1rem;
 `;
 
 

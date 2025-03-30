@@ -35,7 +35,7 @@ export const Input = styled.input`
   background: #f9f9f9;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
-
+// additional info
 // export const CustomInput = styled`
 //   width: 100%;
 //   padding: 1rem;
