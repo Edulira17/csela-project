@@ -21,10 +21,7 @@ const StudentSection = () => {
       <Input
         className={errors?.naturalidade?.type && "input-error"}
         type="text"
-        {...register("naturalidade", {
-          required: "A naturalidade é obrigatória",
-          validate: (value) => /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/.test(value) || "A naturalidade deve conter apenas letras e espaços"
-        })}
+        {...register("naturalidade")}
       />
       {errors.naturalidade && (
         <span className="error-message">{errors.naturalidade?.message as string}</span>
