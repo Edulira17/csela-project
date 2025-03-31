@@ -21,9 +21,8 @@ const Formulario = () => {
         <h2>INFORMAÇÕES ADICIONAIS</h2>
         <AdditionalInfo />
         <ActionsContainer>
-          <Button size="medium" variant="contained" color="success" type="submit">Submit</Button>
-          <Button size="medium" variant="contained" color="success" type="submit">Submit</Button>
-          <Button size="medium" variant="contained" color="success" type="submit">Submit</Button>
+          <Button size="medium" variant="contained" color="warning" type="submit">Limpar</Button>
+          <Button size="medium" variant="contained" color="success" type="submit">Enviar</Button>
         </ActionsContainer>
       </FormContainer>
     </ResponsiveContainerForm>
