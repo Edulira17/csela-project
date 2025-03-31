@@ -1,21 +1,24 @@
+import { zodResolver } from '@hookform/resolvers/zod';
 import { FormGroup, Label, Input, Select } from '../styles'
-
+import { studentInfo } from '../../../../schemas/registration-student-schema';
 import { useForm } from 'react-hook-form'
 
 const StudentSection = () => {
-  const { register, formState: { errors } } = useForm();
+  const { register, formState: { errors } } = useForm({
+    resolver: zodResolver(studentInfo)
+  });
 
   console.log(errors)
   return (
     <FormGroup>
       <Label>Nome Completo</Label>
       <Input
-        className={errors?.name?.type && "input-error"}
+        className={errors?.nomeCompleto?.type && "input-error"}
         type="text"
-        {...register("name")}
+        {...register("nomeCompleto")}
       />
-      {errors.name && (
-        <span className="error-message">{errors.name?.message as string}</span>
+      {errors.nomeCompleto && (
+        <span className="error-message">{errors.nomeCompleto?.message as string}</span>
       )}
       <Label>Naturalidade</Label>
       <Input

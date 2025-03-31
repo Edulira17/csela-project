@@ -4,14 +4,14 @@ import StudentSection from "../../shared/components/FormSections/StudentSection"
 import ResponsibleSection from "../../shared/components/FormSections/ResponsibleSection";
 import AddressSection from "../../shared/components/FormSections/AddressSection";
 import AdditionalInfo from "../../shared/components/FormSections/AdditionalInfo";
-
-// add use-masked-input
+import { useForm } from "react-hook-form";
+import { sendFormData } from "../../utils/sendFormData";
 
 const Formulario = () => {
+  const {handleSubmit} = useForm()
   return (
     <ResponsiveContainerForm>
-      <FormContainer>
-
+      <FormContainer onSubmit={handleSubmit(sendFormData)}>
         <h2>DADOS DOS ALUNOS</h2>
         <StudentSection />
         <h2>DADOS DO RESPONSÁVEL</h2>
@@ -21,7 +21,6 @@ const Formulario = () => {
         <h2>INFORMAÇÕES ADICIONAIS</h2>
         <AdditionalInfo />
         <ActionsContainer>
-
           <Button size="medium" variant="contained" color="warning" type="submit">Limpar</Button>
           <Button size="medium" variant="contained" color="success" type="submit">Registrar</Button>
         </ActionsContainer>
