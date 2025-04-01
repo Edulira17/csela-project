@@ -8,7 +8,6 @@ const StudentSection = () => {
     resolver: zodResolver(studentInfo)
   });
 
-  console.log(errors)
   return (
     <FormGroup>
       <Label>Nome Completo</Label>
@@ -40,11 +39,13 @@ const StudentSection = () => {
       )}
       <Label>Data de Nascimento</Label>
       <Input
+        className={errors?.dataNascimento?.type && "input-error"}
         type="date"
         {...register("dataNascimento")}
       />
       <Label>Nome da Escola</Label>
       <Input
+        className={errors?.escola?.type && "input-error"}
         type="text"
         {...register("escola")}
       />
@@ -54,7 +55,7 @@ const StudentSection = () => {
         {...register("serie")}
       />
       <Label>Turno</Label>
-      <Select >
+      <Select {...register("turno")} className={errors?.turno?.type && "input-error"}>
         <option value="">Selecione um turno</option>
         <option value="matutino">Matutino</option>
         <option value="vespertino">Vespertino</option>
