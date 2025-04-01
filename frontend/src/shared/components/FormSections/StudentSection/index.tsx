@@ -1,53 +1,52 @@
-import { zodResolver } from '@hookform/resolvers/zod';
 import { FormGroup, Label, Input, Select } from '../styles'
-import { studentInfo } from '../../../../schemas/registration-student-schema';
-import { useForm } from 'react-hook-form'
-
+import { useFormContext } from 'react-hook-form'
+import { FormData } from '../../../../schemas/registration-student-schema';
 const StudentSection = () => {
-  const { register, formState: { errors } } = useForm({
-    resolver: zodResolver(studentInfo)
-  });
+  const { register, formState: { errors } } = useFormContext<FormData>();
 
   return (
     <FormGroup>
       <Label>Nome Completo</Label>
       <Input
-        className={errors?.nomeCompleto?.type && "input-error"}
+        className={errors?.studentInfo?.nomeCompleto?.type && "input-error"}
         type="text"
-        {...register("nomeCompleto")}
+        {...register("studentInfo.nomeCompleto")}
       />
-      {errors.nomeCompleto && (
-        <span className="error-message">{errors.nomeCompleto?.message as string}</span>
+      {errors.studentInfo?.nomeCompleto && (
+        <span className="error-message">{errors.studentInfo.nomeCompleto.message as string}</span>
       )}
       <Label>Naturalidade</Label>
       <Input
-        className={errors?.naturalidade?.type && "input-error"}
+        className={errors?.studentInfo?.naturalidade?.type && "input-error"}
         type="text"
-        {...register("naturalidade")}
+        {...register("studentInfo.naturalidade")}
       />
-      {errors.naturalidade && (
-        <span className="error-message">{errors.naturalidade?.message as string}</span>
+      {errors.studentInfo?.naturalidade && (
+        <span className="error-message">{errors.studentInfo.naturalidade.message as string}</span>
       )}
       <Label>Idade</Label>
       <Input
-        className={errors?.idade?.type && "input-error"}
+        className={errors?.studentInfo?.idade?.type && "input-error"}
         type="number"
-        {...register("idade")}
+        {...register("studentInfo.idade")}
       />
-      {errors.idade && (
-        <span className="error-message">{errors.idade?.message as string}</span>
+      {errors.studentInfo?.idade && (
+        <span className="error-message">{errors.studentInfo.idade.message as string}</span>
       )}
       <Label>Data de Nascimento</Label>
       <Input
-        className={errors?.dataNascimento?.type && "input-error"}
+        className={errors?.studentInfo?.dataNascimento?.type && "input-error"}
         type="date"
-        {...register("dataNascimento")}
+        {...register("studentInfo.dataNascimento")}
       />
+      {errors.studentInfo?.dataNascimento && (
+        <span className="error-message">{errors.studentInfo.dataNascimento.message as string}</span>
+      )}
       <Label>Nome da Escola</Label>
       <Input
-        className={errors?.escola?.type && "input-error"}
+        className={errors?.studentInfo?.escola?.type && "input-error"}
         type="text"
-        {...register("escola")}
+        {...register("studentInfo.escola")}
       />
       <Label>Série</Label>
       <Input

@@ -4,35 +4,42 @@ import StudentSection from "../../shared/components/FormSections/StudentSection"
 import ResponsibleSection from "../../shared/components/FormSections/ResponsibleSection";
 import AddressSection from "../../shared/components/FormSections/AddressSection";
 import AdditionalInfo from "../../shared/components/FormSections/AdditionalInfo";
-import { useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { completeFormSchema, FormData } from "../../schemas/registration-student-schema";
 
 const Formulario = () => {
-  const { handleSubmit } = useForm<FormData>({
+  const methods = useForm<FormData>({
     resolver: zodResolver(completeFormSchema)
   })
 
   const sendFormData = (data: FormData) => {
     console.log(data)
   }
+
   return (
-    <ResponsiveContainerForm>
-      <FormContainer onSubmit={handleSubmit(sendFormData)}>
-        <h2>DADOS DOS ALUNOS</h2>
-        <StudentSection />
-        <h2>DADOS DO RESPONSÁVEL</h2>
-        <ResponsibleSection />
-        <h2>ENDEREÇO</h2>
-        <AddressSection />
-        <h2>INFORMAÇÕES ADICIONAIS</h2>
-        <AdditionalInfo />
-        <ActionsContainer>
-          <Button size="medium" variant="contained" color="warning">Limpar</Button>
-          <Button size="medium" variant="contained" color="success" type="submit">Registrar</Button>
-        </ActionsContainer>
-      </FormContainer>
-    </ResponsiveContainerForm>
+    <FormProvider {...methods}>
+      <ResponsiveContainerForm>
+        <FormContainer onSubmit={methods.handleSubmit(sendFormData)}>
+          <h2>DADOS DOS ALUNOS</h2>
+          <StudentSection />
+          <h2>DADOS DO RESPONSÁVEL</h2>
+          <ResponsibleSection />
+          <h2>ENDEREÇO</h2>
+          <AddressSection />
+          <h2>INFORMAÇÕES ADICIONAIS</h2>
+          <AdditionalInfo />
+          <ActionsContainer>
+            <Button size="medium" variant="contained" color="warning" type="button">
+              Limpar
+            </Button>
+            <Button size="medium" variant="contained" color="success" type="submit">
+              Registrar
+            </Button>
+          </ActionsContainer>
+        </FormContainer>
+      </ResponsiveContainerForm>
+    </FormProvider>
   );
 };
 
