@@ -1,14 +1,21 @@
 import { Button } from "@mui/material";
-import { FormContainer,  ResponsiveContainerForm, ActionsContainer } from "./style";
+import { FormContainer, ResponsiveContainerForm, ActionsContainer } from "./style";
 import StudentSection from "../../shared/components/FormSections/StudentSection";
 import ResponsibleSection from "../../shared/components/FormSections/ResponsibleSection";
 import AddressSection from "../../shared/components/FormSections/AddressSection";
 import AdditionalInfo from "../../shared/components/FormSections/AdditionalInfo";
 import { useForm } from "react-hook-form";
-import { sendFormData } from "../../utils/sendFormData";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { completeFormSchema, FormData } from "../../schemas/registration-student-schema";
 
 const Formulario = () => {
-  const {handleSubmit} = useForm()
+  const { handleSubmit } = useForm<FormData>({
+    resolver: zodResolver(completeFormSchema)
+  })
+
+  const sendFormData = (data: FormData) => {
+    console.log(data)
+  }
   return (
     <ResponsiveContainerForm>
       <FormContainer onSubmit={handleSubmit(sendFormData)}>
@@ -21,7 +28,7 @@ const Formulario = () => {
         <h2>INFORMAÇÕES ADICIONAIS</h2>
         <AdditionalInfo />
         <ActionsContainer>
-          <Button size="medium" variant="contained" color="warning" type="submit">Limpar</Button>
+          <Button size="medium" variant="contained" color="warning">Limpar</Button>
           <Button size="medium" variant="contained" color="success" type="submit">Registrar</Button>
         </ActionsContainer>
       </FormContainer>

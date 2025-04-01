@@ -100,13 +100,14 @@ export  const additionalInfo = z.object({
     })
 });
 
-// export  const completeFormSchema = z.object({
-//   studentInfo: studentInfo,
-//   responsibleInfo: responsibleInfo,
-//   addressInfo: addressInfo,
-//   additionalInfo: additionalInfo
-// });
+export  const completeFormSchema = z.object({
+  studentInfo: studentInfo,
+  responsibleInfo: responsibleInfo,
+  addressInfo: addressInfo,
+  additionalInfo: additionalInfo
+});
 
-// export default completeFormSchema;
+export type FormData = z.infer<typeof completeFormSchema>;
+
 
 
