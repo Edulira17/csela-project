@@ -1,106 +1,97 @@
 import { z } from 'zod'
 
-export  const studentInfo = z.object({
+export const studentInfo = z.object({
   nomeCompleto: z
     .string()
-    .min(3, { message: "O nome deve ter no mínimo 3 caracteres" }),
+    .min(3, "Este campo é obrigatório"),
 
   naturalidade: z
     .string()
-    .min(3, { message: "A naturalidade deve ter no mínimo 3 caracteres" }),
+    .min(1, "Este campo é obrigatório"),
 
   idade: z
     .string()
+    .min(1, "Este campo é obrigatório")
     .regex(/^\d+$/, "A idade deve conter apenas números")
     .refine((val) => Number(val) > 7 && Number(val) < 17, { message: "Idade deve ser um número entre 7 e 17 ", }),
 
   dataNascimento: z
     .string()
+    .min(1, "Este campo é obrigatório")
     .regex(/^\d{2}\/\d{2}\/\d{4}$/, "Formato inválido (dd/mm/aaaa)"),
 
   escola: z
     .string()
-    .min(3, "O nome da escola deve ter no mínimo 3 caracteres"),
+    .min(1, "Este campo é obrigatório"),
 
   serie: z
     .string()
-    .min(1, "A série deve ter no mínimo 1 caractere"),
+    .min(1, "Este campo é obrigatório"),
 
-  turno: z.enum(["Matutino", "Vespertino"], {
+  turno: z.enum(["matutino", "vespertino"], {
     errorMap: () => ({ message: "Selecione um turno válido" })
   })
 });
 
-export  const responsibleInfo = z.object({
+export const responsibleInfo = z.object({
   nomeResponsavel: z
     .string()
     .min(3, "O nome do responsável deve ter no mínimo 3 caracteres"),
 
   numeroContato: z
     .string()
-    .regex(/^\d{10,11}$/, "Número inválido"),
+    .regex(/^\(\d{2}\) \d{5}-\d{4}$/, "Número de contato inválido. Formato esperado: (99) 99999-9999"),
   rg: z
     .string()
-    .regex(/^\d{7,14}$/, "RG inválido"),
-
+    .regex(/^\d{7}-\d$/, "RG inválido. Formato esperado: 9999999-9"),
   cpf: z
     .string()
-    .regex(/^\d{11}$/, "CPF inválido"),
+    .regex(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/, "CPF inválido. Formato esperado: 999.999.999-99"),
 });
 
-export  const addressInfo = z.object({
+export const addressInfo = z.object({
   cep: z
     .string()
-    .regex(/^\d{5}-\d{3}$/, "CEP inválido (Ex: 12345-678)"),
+    .regex(/^\d{5}-\d{3}$/, "CEP inválido (Ex: 99999-999)"),
 
   rua: z
     .string()
-    .min(3, "A rua deve ter no mínimo 3 caracteres"),
+    .min(1, "Este campo é obrigatório"),
 
   bairro: z
     .string()
-    .min(3, "O bairro deve ter no mínimo 3 caracteres"),
+    .min(1, "Este campo é obrigatório"),
 
   cidade: z
     .string()
-    .min(3, "A cidade deve ter no mínimo 3 caracteres"),
+    .min(1, "Este campo é obrigatório"),
 });
 
-export  const additionalInfo = z.object({
-  oficina: z
-    .string()
-    .min(1, "Selecione uma opção"),
-
-  turno: z
-    .enum(["Matutino", "Vespertino"], {
-      errorMap: () => ({ message: "Selecione um turno válido" })
-    }),
-
-  moradia: z
-    .string()
-    .min(1, "Selecione uma opção"),
-
-  recebeAuxilio: z
-    .enum(["Sim", "Não"], {
-      errorMap: () => ({ message: "Selecione Sim ou Não" })
-    }),
-
-  transportePublico: z
-    .enum(["Sim", "Não"], {
-      errorMap: () => ({ message: "Selecione Sim ou Não" })
-    }),
-
-  quantidadePessoasResidencia: z
-    .string()
-    .regex(/^\d+$/, "Informe um número válido"),
-
-  autorizacaoDivulgacaoImagens: z
-    .enum(["Sim", "Não"], {
-      errorMap: () => ({ message: "Selecione Sim ou Não" })
-    })
+export const additionalInfo = z.object({
+  oficina: z.enum(["artes", "violao", "jiu-jitsu", "n1", "n2", "n3"], {
+    errorMap: () => ({ message: "Selecione uma oficina válida" })
+  }),
+  horario: z.enum(["matutino", "vespertino"], {
+    errorMap: () => ({ message: "Selecione um horário válido" })
+  }),
+  moradia: z.enum(["propria", "alugada", "cedida"], {
+    errorMap: () => ({ message: "Selecione um tipo de moradia válido" })
+  }),
+  auxilio: z.enum(["sim", "nao"], {
+    errorMap: () => ({ message: "Informe se recebe auxílio do governo" })
+  }),
+  transporte: z.enum(["sim", "nao"], {
+    errorMap: () => ({ message: "Informe se utiliza transporte público" })
+  }),
+  moradores: z.enum(["2-3", "4-5", "6"], {
+    errorMap: () => ({ message: "Informe a quantidade de moradores na residência" })
+  }),
+  divulgacao: z.enum(["sim", "nao"], {
+    errorMap: () => ({ message: "Informe se podemos divulgar fotos e atividades de seu filho" })
+  }),
 });
 
-export  const completeFormSchema = z.object({
+export const completeFormSchema = z.object({
   studentInfo: studentInfo,
   responsibleInfo: responsibleInfo,
   addressInfo: addressInfo,
