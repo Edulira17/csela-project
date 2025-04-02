@@ -33,22 +33,22 @@ const AddressSection = () => {
   return (
     <FormGroup>
       <Label>CEP</Label>
-      <Input {...registerWithMask('addressInfo.cep', '99999-999')} onBlur={getCepInfo} />
+      <Input {...registerWithMask('addressInfo.cep', '99999-999')} onBlur={getCepInfo} className={errors?.addressInfo?.cep?.type && "input-error"}/>
       {errors.addressInfo?.cep && (
         <span className="error-message">{errors.addressInfo.cep.message as string}</span>
       )}
       <Label>Rua</Label>
-      <Input  {...register('addressInfo.rua')} />
+      <Input  {...register('addressInfo.rua')} className={errors?.addressInfo?.rua?.type && "input-error"}/>
       {errors.addressInfo?.rua && (
         <span className="error-message">{errors.addressInfo.rua.message as string}</span>
       )}
       <Label>Bairro</Label>
-      <Input  {...register('addressInfo.bairro')} />
+      <Input  {...register('addressInfo.bairro')} className={errors?.addressInfo?.bairro?.type && "input-error"}/>
       {errors.addressInfo?.bairro && (
         <span className="error-message">{errors.addressInfo.bairro.message as string}</span>
       )}
       <Label>Cidade</Label>
-      <Input  {...register('addressInfo.cidade')} />
+      <Input  {...register('addressInfo.cidade')} className={errors?.addressInfo?.cidade?.type && "input-error"}/>
       {errors.addressInfo?.cidade && (
         <span className="error-message">{errors.addressInfo.cidade.message as string}</span>
       )}
