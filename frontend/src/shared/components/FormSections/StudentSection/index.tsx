@@ -8,7 +8,7 @@ const StudentSection = () => {
     <FormGroup>
       <Label>Nome Completo</Label>
       <Input
-        className={errors?.studentInfo?.nomeCompleto?.type && "input-error"}
+        className={errors?.studentInfo?.nomeCompleto?.type && "input-er ror"}
         type="text"
         {...register("studentInfo.nomeCompleto")}
       />
@@ -36,7 +36,6 @@ const StudentSection = () => {
       <Label>Data de Nascimento</Label>
       <Input
         className={errors?.studentInfo?.dataNascimento?.type && "input-error"}
-        type="date"
         {...register("studentInfo.dataNascimento")}
       />
       {errors.studentInfo?.dataNascimento && (
@@ -48,17 +47,26 @@ const StudentSection = () => {
         type="text"
         {...register("studentInfo.escola")}
       />
+      {errors.studentInfo?.escola && (
+        <span className="error-message">{errors.studentInfo.escola.message as string}</span>
+      )}
       <Label>Série</Label>
       <Input
         type="number"
-        {...register("serie")}
+        {...register("studentInfo.serie")}
       />
+      {errors.studentInfo?.serie && (
+        <span className="error-message">{errors.studentInfo.serie.message as string}</span>
+      )}
       <Label>Turno</Label>
-      <Select {...register("turno")} className={errors?.turno?.type && "input-error"}>
+      <Select {...register("studentInfo.turno")} className={errors?.studentInfo?.turno?.type && "input-error"}>
         <option value="">Selecione um turno</option>
         <option value="matutino">Matutino</option>
         <option value="vespertino">Vespertino</option>
       </Select>
+      {errors.studentInfo?.turno && (
+        <span className="error-message">{errors.studentInfo.turno.message as string}</span>
+      )}
     </FormGroup>
   );
 };
