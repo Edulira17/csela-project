@@ -8,7 +8,7 @@ const StudentSection = () => {
     <FormGroup>
       <Label>Nome Completo</Label>
       <Input
-        className={errors?.studentInfo?.nomeCompleto?.type && "input-er ror"}
+        className={errors?.studentInfo?.nomeCompleto?.type && "input-error"}
         type="text"
         {...register("studentInfo.nomeCompleto")}
       />
@@ -52,6 +52,7 @@ const StudentSection = () => {
       )}
       <Label>Série</Label>
       <Input
+        className={errors?.studentInfo?.serie?.type && "input-error"}
         type="number"
         {...register("studentInfo.serie")}
       />
