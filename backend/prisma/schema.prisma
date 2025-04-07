@@ -25,7 +25,7 @@ model Estudante {
   createAt       DateTime @default(now())
   updatedAt      DateTime @updatedAt
 
-  responsavel             Responsavel?           @relation(fields: [responsavelId], references: [id])
+  responsavel             Responsavel?            @relation(fields: [responsavelId], references: [id])
   responsavelId           Int?
   endereco                Endereco?              @relation(fields: [enderecoId], references: [id])
   enderecoId              Int?
