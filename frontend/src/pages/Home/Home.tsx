@@ -23,7 +23,7 @@ const Home = () => {
       </SliderContainer>
       <HomeContent>
         <HomeTitle>
-          <img src={IllustrationIntro} alt="" className="icon-title" />
+          <img src={IllustrationIntro} alt="Imagem ilustrativa" className="icon-title" />
           Introdução ao CSELA
         </HomeTitle>
         <IntroductionContainer>

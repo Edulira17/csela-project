@@ -26,7 +26,7 @@ const ButtonLearnMore: React.FC<ButtonKnowProps> = ({ children, ...props }) => {
 
       {/* Adicionar conteúdo: textos explicando o projeto*/}
       <StyledDialog onClose={handleClose} open={open}>
-        <DialogTitle>title</DialogTitle>
+        <DialogTitle>9</DialogTitle>
         <DialogContent dividers>
           <Typography gutterBottom>
             Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
