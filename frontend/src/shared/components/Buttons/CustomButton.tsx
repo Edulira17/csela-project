@@ -7,9 +7,11 @@ import { Typography } from '@mui/material';
 
 interface ButtonKnowProps {
   children: React.ReactNode;
+  title: string;
+  paragraphs: string[];
 }
 
-const ButtonLearnMore: React.FC<ButtonKnowProps> = ({ children, ...props }) => {
+const ButtonLearnMore: React.FC<ButtonKnowProps> = ({ children, title, paragraphs, ...props }) => {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -22,26 +24,19 @@ const ButtonLearnMore: React.FC<ButtonKnowProps> = ({ children, ...props }) => {
 
   return (
     <React.Fragment>
-      <CustomButton onClick={handleClickOpen} {...props} variant='contained' size='small'>{children}</CustomButton>
+      <CustomButton onClick={handleClickOpen} {...props} variant='contained' size='small'>
+        {children}
+      </CustomButton>
 
-      {/* Adicionar conteúdo: textos explicando o projeto*/}
+      {/* refactor dialog -> componentizar o dialog*/}
       <StyledDialog onClose={handleClose} open={open}>
-        <DialogTitle>9</DialogTitle>
-        <DialogContent dividers>
-          <Typography gutterBottom>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </Typography>
-          <Typography gutterBottom>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-          </Typography>
-          <Typography gutterBottom>
-            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus
-            magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec
-            ullamcorper nulla non metus auctor fringilla.
-          </Typography>
+        <DialogTitle variant='h5'>{title}</DialogTitle>
+        <DialogContent>
+          {paragraphs.map((text, index) => (
+            <Typography key={index} gutterBottom>
+              {text}
+            </Typography>
+          ))}
         </DialogContent>
         <DialogActions>
           <CustomButton autoFocus onClick={handleClose} >
