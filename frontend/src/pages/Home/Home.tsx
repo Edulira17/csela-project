@@ -84,7 +84,12 @@ const Home = () => {
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
                 </DescriptionProject>
-                <ButtonLearnMore>Saber mais</ButtonLearnMore>
+                <ButtonLearnMore
+                  title={project.dialogTitle}
+                  paragraphs={project.dialogParagraphs}
+                >
+                  Saber mais
+                </ButtonLearnMore>
               </ProjectCard>
             ))}
           </ProjectList>
