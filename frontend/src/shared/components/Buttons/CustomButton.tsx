@@ -33,7 +33,7 @@ const ButtonLearnMore: React.FC<ButtonKnowProps> = ({ children, title, paragraph
         <DialogTitle variant='h5'>{title}</DialogTitle>
         <DialogContent>
           {paragraphs.map((text, index) => (
-            <Typography key={index} gutterBottom>
+            <Typography variant='body1' key={index} gutterBottom>
               {text}
             </Typography>
           ))}

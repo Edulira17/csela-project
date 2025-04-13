@@ -85,7 +85,7 @@ const Home = () => {
                   <p>{project.description}</p>
                 </DescriptionProject>
                 <ButtonLearnMore
-                  title={project.dialogTitle}
+                  title={project.title}
                   paragraphs={project.dialogParagraphs}
                 >
                   Saber mais
