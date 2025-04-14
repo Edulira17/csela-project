@@ -9,9 +9,9 @@ export const HomeContainer = styled.div`
   align-items: center;
 `;
 
-// modifications in swiper slider
+
 export const SliderContainer = styled.div`
-  width: 80%;
+  width: 100%;
 `;
 
 export const HomeContent = styled.main`
