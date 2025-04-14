@@ -63,17 +63,11 @@ const Home = () => {
           <article>
             <section className="text-mission">
               <p>{" "}
-                O Centro Social e Educacional do Lago do Aleixo (CSELA) é uma
-                organização sem fins lucrativos localizada na Rua Padre Mário,
-                número 21, no bairro Colônia Antônio Aleixo, em Manaus, Amazonas.
-                Fundado em 24 de abril de 1972, o CSELA tem como missão promover o
-                desenvolvimento comunitário, visando à promoção e dignidade humana
-                dos moradores do bairro Antônio Aleixo.
+                O Centro Social e Educacional do Lago do Aleixo (CSELA) é uma organização comprometida com a transformação social da comunidade da Colônia Antônio Aleixo, em Manaus. Atuando há anos com dedicação e propósito, o CSELA desenvolve projetos que impactam positivamente a vida de crianças, adolescentes e famílias em situação de vulnerabilidade.
                 <br />
                 <br />
                 <strong>
-                  A instituição desenvolve diversos projetos de capacitação nas
-                  comunidades do bairro, incluindo:
+                  A missão do CSELA é formar cidadãos conscientes, criativos e solidários, promovendo o acesso à educação, à cultura, ao esporte e à cidadania. Suas ações são guiadas por três pilares essenciais, que sustentam todas as atividades desenvolvidas pela instituição:
                 </strong></p>
             </section>
           </article>
