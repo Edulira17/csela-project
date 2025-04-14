@@ -1,7 +1,7 @@
 import { useFormContext } from 'react-hook-form';
 import { FormGroup, Label, Input } from '../styles'
 import { useHookFormMask } from 'use-mask-input';
-import { FormData } from '../../../../schemas/registration-student-schema';
+import { FormData } from '../../../../validations/registration-student-schema';
 
 const ResponsibleSection = () => {
   const { register, formState: { errors } } = useFormContext<FormData>();

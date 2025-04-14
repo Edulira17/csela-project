@@ -1,4 +1,4 @@
-import { FormData } from '../../../../schemas/registration-student-schema';
+import { FormData } from '../../../../validations/registration-student-schema';
 import { FormGroup, Label, Select } from '../styles'
 import { useFormContext } from 'react-hook-form';
 

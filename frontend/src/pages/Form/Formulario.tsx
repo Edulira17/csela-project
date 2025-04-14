@@ -6,7 +6,7 @@ import AddressSection from "../../shared/components/FormSections/AddressSection"
 import AdditionalInfo from "../../shared/components/FormSections/AdditionalInfo";
 import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { completeFormSchema, FormData } from "../../schemas/registration-student-schema";
+import { completeFormSchema, FormData } from "../../validations/registration-student-schema";
 
 const Formulario = () => {
   const methods = useForm<FormData>({

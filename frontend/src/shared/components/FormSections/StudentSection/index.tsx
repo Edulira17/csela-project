@@ -1,6 +1,6 @@
 import { FormGroup, Label, Input, Select } from '../styles'
 import { useFormContext } from 'react-hook-form'
-import { FormData } from '../../../../schemas/registration-student-schema';
+import { FormData } from '../../../../validations/registration-student-schema';
 const StudentSection = () => {
   const { register, formState: { errors } } = useFormContext<FormData>();
 
