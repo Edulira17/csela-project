@@ -1,14 +1,25 @@
 import styled from "styled-components";
 
+
+export const ResponsiveContainerWorkshops = styled.div`
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+`
+
 // Cards
-export const CardContainer = styled.div`
+export const CardContainer = styled.section`
+  max-width: 1024px;
+  margin: 0 auto;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
-  gap: 20px;
-  max-width: 900px;
-  margin: 0 auto;
+  gap: 1rem;
+  
 `;
 
 export const Card = styled.figure`
