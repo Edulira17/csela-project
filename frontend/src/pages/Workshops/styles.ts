@@ -13,18 +13,19 @@ export const ResponsiveContainerWorkshops = styled.div`
 
 export const AboutWorkshops = styled.section`
   background-color: #fff;
-  padding: 3rem 2rem;
+  padding: 2rem 3rem;
   border-radius: 1.5rem;
   box-shadow:  0 4px 10px rgba(0, 0, 0, 0.1);
   max-width: 80%;
   margin: 0 auto;
-  text-align: center;
+
 
   .about-title {
     font-size: 2rem;
     font-weight: 700;
+    text-align: center;
     color: #1f2937;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     @media (max-width: 600px) {
       font-size: 1.5rem;
     }

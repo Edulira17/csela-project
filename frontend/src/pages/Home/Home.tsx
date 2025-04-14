@@ -1,4 +1,4 @@
-import Slider from "../../shared/components/Slider/Slider";
+import Carousel from "../../shared/components/Carousel/Carousel";
 import {
   HomeContainer,
   HomeContent,
@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <HomeContainer>
       <SliderContainer>
-        <Slider />
+        <Carousel />
       </SliderContainer>
       <HomeContent>
         <HomeTitle>
