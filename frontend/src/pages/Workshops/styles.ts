@@ -8,7 +8,45 @@ export const ResponsiveContainerWorkshops = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
+  padding: 1rem;
 `
+
+export const AboutWorkshops = styled.section`
+  background-color: #fff;
+  padding: 3rem 2rem;
+  border-radius: 1.5rem;
+  box-shadow:  0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: center;
+
+  .about-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1rem;
+    @media (max-width: 600px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .about-text{
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #374151;
+    @media (max-width: 600px) {
+      font-size: 1rem;
+    }
+  }
+
+
+  @media (max-width: 600px){
+    padding: 2rem 1rem;
+  }
+`
+
+
+
 
 // Cards
 export const CardContainer = styled.section`
