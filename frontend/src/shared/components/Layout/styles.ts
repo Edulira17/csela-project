@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const LayoutContainer = styled.div`
   width: 100%;
   min-height: 100%;
-
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   z-index: 1;

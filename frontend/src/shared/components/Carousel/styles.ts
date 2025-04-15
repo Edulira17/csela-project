@@ -15,6 +15,9 @@ export const CarouselSlide = styled.div`
 
   .carousel-image-container{
     width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
     object-fit: cover ;
     filter: blur(5px);
   }
