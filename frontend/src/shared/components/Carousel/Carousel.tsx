@@ -10,27 +10,31 @@ import { CarouselContainer, CarouselSlide } from './styles';
 
 const Carousel = () => {
   const settings = {
-    dots: true,
+    dots: false,
+    arrow: false,
     infinite: true,
-    speed: 500,
+    speed: 3500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3500,
+    cssEase: "linear"
   };
 
   return (
     <CarouselContainer>
       <SimpleSlider {...settings}>
         <CarouselSlide>
-          <img src={slide1} alt="image1" className='carousel-image'/>
+          <img src={slide1} alt="image1" className='carousel-image-container' />
         </CarouselSlide>
         <CarouselSlide>
-          <img src={slide2} alt="image2" className='carousel-image'/>
+          <img src={slide2} alt="image2" className='carousel-image-container' />
         </CarouselSlide>
         <CarouselSlide>
-          <img src={slide3} alt="image3" className='carousel-image'/>
+          <img src={slide3} alt="image3" className='carousel-image-container' />
         </CarouselSlide>
         <CarouselSlide>
-          <img src={slide4} alt="image3" className='carousel-image'/>
+          <img src={slide4} alt="image3" className='carousel-image-container' />
         </CarouselSlide>
       </SimpleSlider>
     </CarouselContainer>
