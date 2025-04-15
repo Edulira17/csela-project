@@ -1,11 +1,10 @@
 import SimpleSlider from 'react-slick';
 
-
 import slide1 from './images/csela_img01.jpg'
 import slide2 from './images/csela_img02.jpg'
 import slide3 from './images/csela_img03.jpg'
 import slide4 from './images/csela_img04.jpg'
-import { CarouselContainer, CarouselSlide } from './styles';
+import { CarouselContainer, CarouselSlide, OverlayText } from './styles';
 
 
 const Carousel = () => {
@@ -23,6 +22,7 @@ const Carousel = () => {
 
   return (
     <CarouselContainer>
+      <OverlayText>Seja bem vindo ao CSELA</OverlayText>
       <SimpleSlider {...settings}>
         <CarouselSlide>
           <img src={slide1} alt="image1" className='carousel-image-container' />
