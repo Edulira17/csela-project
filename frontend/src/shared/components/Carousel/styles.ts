@@ -34,4 +34,16 @@ export const OverlayText = styled.div`
   text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
   z-index: 2;
   pointer-events: none; 
+
+  .flex{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+  }
+
+  .text-highlight{
+    font-size: 2.5rem;
+    font-weight: 900;
+  }
 `

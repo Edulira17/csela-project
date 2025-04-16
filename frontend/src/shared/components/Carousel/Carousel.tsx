@@ -22,7 +22,12 @@ const Carousel = () => {
 
   return (
     <CarouselContainer>
-      <OverlayText>Seja bem vindo ao CSELA</OverlayText>
+      <OverlayText>
+        <div className='flex'>
+          <span className='text-highlight'>Bem vindo ao Csela !</span>
+          <span className='text-highlight'>Cuidando, ensinando e inspirando</span>
+        </div>
+      </OverlayText>
       <SimpleSlider {...settings}>
         <CarouselSlide>
           <img src={slide1} alt="image1" className='carousel-image-container' />
