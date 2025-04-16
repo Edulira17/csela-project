@@ -35,7 +35,7 @@ export const OverlayText = styled.div`
   z-index: 2;
   pointer-events: none; 
 
-  .flex{
+  .carousel-overlay-text{
     display: flex;
     flex-direction: column;
     gap: 25px;

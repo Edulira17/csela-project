@@ -23,9 +23,9 @@ const Carousel = () => {
   return (
     <CarouselContainer>
       <OverlayText>
-        <div className='flex'>
-          <span className='text-highlight'>Bem vindo ao Csela !</span>
-          <span className='text-highlight'>Cuidando, ensinando e inspirando</span>
+        <div className='carousel-overlay-text'>
+          <span className='carousel-highlight'>Bem vindo ao Csela !</span>
+          <span className='carousel-highlight'>Cuidando, ensinando e inspirando</span>
         </div>
       </OverlayText>
       <SimpleSlider {...settings}>
