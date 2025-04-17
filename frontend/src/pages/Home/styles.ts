@@ -52,35 +52,34 @@ export const IntroductionContainer = styled.section`
   padding: 2rem;
   background-color: #fff;
 
-  .text-introduction {
-    padding: 2rem;
-    text-align: justify;
-    font-size: 1.2rem;
+  @media (max-width: 768px) {
+    padding: 1.5rem;
   }
 `;
 
 export const MissionContainer = styled.section`
   width: 100%;
   display: flex;
-
   flex-direction: column;
+  gap: 25px;
+
   align-items: center;
-  margin: 2rem auto;
+  margin-bottom: 3rem;
   background-color: #fff;
 
-  padding: 2.5rem;
+  padding: 2rem;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-
-  .text-mission {
-    padding: 2rem;
-    text-align: justify;
-    font-size: 1.2rem;
-  }
-
   @media (max-width: 768px) {
     padding: 1.5rem;
   }
 `;
+
+export const TextContainer = styled.article`
+  width: 80%;
+  padding: 2rem;
+  text-align: justify;
+  font-size: 1.2rem;
+`
 
 export const ProjectList = styled.ul`
   display: flex;

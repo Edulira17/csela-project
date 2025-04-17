@@ -9,6 +9,7 @@ import {
   ProjectList,
   ProjectCard,
   DescriptionProject,
+  TextContainer,
 } from "./styles";
 import projectsOfferedData from './projectsOfferedData'
 import ButtonLearnMore from "../../shared/components/Buttons/CustomButton";
@@ -21,10 +22,10 @@ const Home = () => {
       </SliderContainer>
       <HomeContent>
         <HomeTitle>
-          CSELA: Compromisso com a Comunidade
+          🤝 CSELA: Compromisso com a Comunidade
         </HomeTitle>
         <IntroductionContainer>
-          <article className="text-introduction">
+          <TextContainer>
             <p >
               <strong>O Centro Social e Educacional do Lago do Aleixo (CSELA)</strong> é uma instituição comprometida com o desenvolvimento social e educacional da comunidade. Através de uma série de projetos, o CSELA busca proporcionar oportunidades para crianças, jovens e adultos, incentivando a arte, o esporte, a cultura e a cidadania.
               <br />
@@ -48,13 +49,13 @@ const Home = () => {
               Colônia Antonio Aleixo. Contudo, nesses processos autogestionários,
               procura-se fazer com que a lógica da prática cooperativa seja
               compreendida pela população do Bairro.</p>
-          </article>
+          </TextContainer>
         </IntroductionContainer>
         <HomeTitle>
-          Nossa missão
+          🌟 Nossa missão
         </HomeTitle>
         <MissionContainer>
-          <article>
+          <TextContainer>
             <section className="text-mission">
               <p>{" "}
                 O Centro Social e Educacional do Lago do Aleixo (CSELA) é uma organização comprometida com a transformação social da comunidade da Colônia Antônio Aleixo, em Manaus. Atuando há anos com dedicação e propósito, o CSELA desenvolve projetos que impactam positivamente a vida de crianças, adolescentes e famílias em situação de vulnerabilidade.
@@ -64,7 +65,7 @@ const Home = () => {
                   A missão do CSELA é formar cidadãos conscientes, criativos e solidários, promovendo o acesso à educação, à cultura, ao esporte e à cidadania. Suas ações são guiadas por três pilares essenciais, que sustentam todas as atividades desenvolvidas pela instituição:
                 </strong></p>
             </section>
-          </article>
+          </TextContainer>
           <ProjectList>
             {projectsOfferedData.map((project) => (
               <ProjectCard key={project.id}>

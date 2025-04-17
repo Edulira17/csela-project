@@ -7,7 +7,7 @@ export const CarouselContainer = styled.div`
 `
 
 export const CarouselSlide = styled.div`
-  height: 500px;
+  height: 400px;
   position: relative;
   display: flex;
   align-items: center;
@@ -23,7 +23,7 @@ export const CarouselSlide = styled.div`
   }
 `
 
-export const OverlayText = styled.div`
+export const OverlayText = styled.div` 
   position: absolute;
   top: 50%;
   left: 50%;
