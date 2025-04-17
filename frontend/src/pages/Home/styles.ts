@@ -43,15 +43,14 @@ export const HomeTitle = styled.h1`
 `;
 
 export const IntroductionContainer = styled.section`
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 1rem;
 
+  padding: 2rem;
   background-color: #fff;
-  border-radius: 8px;
-  border: 2px solid #b22222;
 
   .text-introduction {
     padding: 2rem;
