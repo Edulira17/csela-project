@@ -60,8 +60,7 @@ export const IntroductionContainer = styled.section`
 `;
 
 export const MissionContainer = styled.section`
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
   display: flex;
 
   flex-direction: column;
@@ -69,9 +68,7 @@ export const MissionContainer = styled.section`
   margin: 2rem auto;
   background-color: #fff;
 
-  border-radius: 8px;
-  border: 2px solid #b22222;
-  padding: 2rem;
+  padding: 2.5rem;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 
   .text-mission {

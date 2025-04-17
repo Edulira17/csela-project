@@ -10,8 +10,6 @@ import {
   ProjectCard,
   DescriptionProject,
 } from "./styles";
-import IllustrationIntro from "./assets/hello_ilustration.png";
-import IllustrationMission from "./assets/hand_in_hand.png";
 import projectsOfferedData from './projectsOfferedData'
 import ButtonLearnMore from "../../shared/components/Buttons/CustomButton";
 
@@ -26,32 +24,30 @@ const Home = () => {
           CSELA: Compromisso com a Comunidade
         </HomeTitle>
         <IntroductionContainer>
-          <article>
-            <section>
-              <p className="text-introduction">
-                <strong>O Centro Social e Educacional do Lago do Aleixo (CSELA)</strong> é uma instituição comprometida com o desenvolvimento social e educacional da comunidade. Através de uma série de projetos, o CSELA busca proporcionar oportunidades para crianças, jovens e adultos, incentivando a arte, o esporte, a cultura e a cidadania.
-                <br />
-                <br />
-                De acordo com <strong>Neuza Ramos Colares</strong>, coordenadora do
-                centro, um importante local desse projeto é a biblioteca, que evita
-                o deslocamento dos estudantes até o Centro da cidade para realizar
-                pesquisas escolares. Já o projeto Remo Vida Atividades Esportivas
-                foi pensado e desenvolvido após um acidente envolvendo cinco
-                crianças, que perderam a vida ao naufragarem quando tentavam
-                atravessar o lago. Nenhuma dessas crianças sabia nadar e, desde
-                então, o projeto ensina às crianças a prática de natação e também a
-                de remo, além de manter uma escola de futebol e de capoeira.
-                <br />
-                <br />A atuação do CSELA com grupos populares procura enfatizar
-                processos de conscientização, onde os atores sociais vão,
-                progressivamente, assumindo o papel de sujeitos de sua própria
-                história. Este aprendizado social necessita de um espaço público
-                para se expressar, denominado como espaços alternativos. Daí os
-                diversos espaços e atividades descentralizadas por todo o bairro da
-                Colônia Antonio Aleixo. Contudo, nesses processos autogestionários,
-                procura-se fazer com que a lógica da prática cooperativa seja
-                compreendida pela população do Bairro.</p>
-            </section>
+          <article className="text-introduction">
+            <p >
+              <strong>O Centro Social e Educacional do Lago do Aleixo (CSELA)</strong> é uma instituição comprometida com o desenvolvimento social e educacional da comunidade. Através de uma série de projetos, o CSELA busca proporcionar oportunidades para crianças, jovens e adultos, incentivando a arte, o esporte, a cultura e a cidadania.
+              <br />
+              <br />
+              De acordo com <strong>Neuza Ramos Colares</strong>, coordenadora do
+              centro, um importante local desse projeto é a biblioteca, que evita
+              o deslocamento dos estudantes até o Centro da cidade para realizar
+              pesquisas escolares. Já o projeto Remo Vida Atividades Esportivas
+              foi pensado e desenvolvido após um acidente envolvendo cinco
+              crianças, que perderam a vida ao naufragarem quando tentavam
+              atravessar o lago. Nenhuma dessas crianças sabia nadar e, desde
+              então, o projeto ensina às crianças a prática de natação e também a
+              de remo, além de manter uma escola de futebol e de capoeira.
+              <br />
+              <br />A atuação do CSELA com grupos populares procura enfatizar
+              processos de conscientização, onde os atores sociais vão,
+              progressivamente, assumindo o papel de sujeitos de sua própria
+              história. Este aprendizado social necessita de um espaço público
+              para se expressar, denominado como espaços alternativos. Daí os
+              diversos espaços e atividades descentralizadas por todo o bairro da
+              Colônia Antonio Aleixo. Contudo, nesses processos autogestionários,
+              procura-se fazer com que a lógica da prática cooperativa seja
+              compreendida pela população do Bairro.</p>
           </article>
         </IntroductionContainer>
         <HomeTitle>
