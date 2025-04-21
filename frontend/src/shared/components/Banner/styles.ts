@@ -50,7 +50,7 @@ export const BannerContent = styled.div`
   }
 
   p {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-top: 10px;
     max-width: 600px;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);  
