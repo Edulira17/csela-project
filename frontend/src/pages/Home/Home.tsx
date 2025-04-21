@@ -1,4 +1,4 @@
-import Carousel from "../../shared/components/Carousel/Carousel";
+import Carousel from "../../shared/components/Banner/Banner";
 import {
   HomeContainer,
   HomeContent,

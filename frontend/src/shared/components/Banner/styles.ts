@@ -1,26 +1,14 @@
 import styled from "styled-components";
 
-export const CarouselContainer = styled.div`
+export const BannerContainer = styled.div`
   width: 100%;
+  height: 300px;
   position: relative;
   margin: 0 auto;
 `
 
-export const CarouselSlide = styled.div`
-  height: 400px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+export const Banner = styled.img`
 
-  .carousel-image-container{
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover ;
-    filter: blur(5px);
-  }
 `
 
 export const OverlayText = styled.div` 
@@ -35,7 +23,7 @@ export const OverlayText = styled.div`
   z-index: 2;
   pointer-events: none; 
 
-  .carousel-overlay-text{
+  .banner-overlay-text{
     display: flex;
     flex-direction: column;
     gap: 25px;
