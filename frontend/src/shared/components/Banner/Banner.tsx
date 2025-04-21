@@ -1,17 +1,16 @@
-import { BannerContainer, Banner, OverlayText } from "./styles";
+import { BannerBackground, BannerContent, BannerWrapper } from "./styles";
+import ImageBanner from './images/imageEcae.png'
 
-
-const Banner = () => {
+const SimpleBanner = () => {
   return (
-    <BannerContainer>
-      <OverlayText>
-        <div className="banner-overlay-text">
-          <span className="text-highlight">Bem vindo ao CSELA</span>
-        </div>
-      </OverlayText>
-      <Banner />
-    </BannerContainer>
+    <BannerWrapper>
+      <BannerBackground image={ImageBanner} />
+      <BannerContent>
+        <h1>Bem-vindo ao CSELA</h1>
+        <p>Educação, Cultura e Transformação Social</p>
+      </BannerContent>
+    </BannerWrapper>
   );
 };
 
-export default Banner;
+export default SimpleBanner;

@@ -10,7 +10,7 @@ export const HomeContainer = styled.div`
 `;
 
 
-export const SliderContainer = styled.div`
+export const BannerContainer = styled.div`
   width: 100%;
 `;
 

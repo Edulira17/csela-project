@@ -1,37 +1,58 @@
 import styled from "styled-components";
 
-export const BannerContainer = styled.div`
-  width: 100%;
-  height: 300px;
+interface BackgroundProps {
+  image: string;
+}
+
+export const BannerWrapper = styled.div`
   position: relative;
-  margin: 0 auto;
+  height: 400px;
+  overflow: hidden;
 `
 
-export const Banner = styled.img`
-
-`
-
-export const OverlayText = styled.div` 
+export const BannerBackground = styled.div<BackgroundProps>`
+  background-image: ${({ image }) => `url(${image})`};
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+  width: 100%;
+  height: 100%;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 2rem;
-  font-weight: bold;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-  z-index: 2;
-  pointer-events: none; 
+  z-index: 1;
+`
 
-  .banner-overlay-text{
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    text-align: center;
+export const BannerContent = styled.div` 
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  font-size: 2rem;
+
+  font-weight: bold;
+  text-shadow: 1px 1px 4px black;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+
+  background-color:rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+  border-radius: 10px;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
   }
 
-  .text-highlight{
-    font-size: 2.5rem;
-    font-weight: 900;
+  p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    max-width: 600px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);  
   }
 `

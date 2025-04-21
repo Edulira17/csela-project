@@ -1,8 +1,6 @@
-import Carousel from "../../shared/components/Banner/Banner";
 import {
   HomeContainer,
   HomeContent,
-  SliderContainer,
   HomeTitle,
   IntroductionContainer,
   MissionContainer,
@@ -10,16 +8,19 @@ import {
   ProjectCard,
   DescriptionProject,
   TextContainer,
+  BannerContainer
 } from "./styles";
 import projectsOfferedData from './projectsOfferedData'
 import ButtonLearnMore from "../../shared/components/Buttons/CustomButton";
+import SimpleBanner from "../../shared/components/Banner/Banner";
+
 
 const Home = () => {
   return (
     <HomeContainer>
-      <SliderContainer>
-        <Carousel />
-      </SliderContainer>
+      <BannerContainer>
+        <SimpleBanner />
+      </BannerContainer>
       <HomeContent>
         <HomeTitle>
           🤝 CSELA: Compromisso com a Comunidade
