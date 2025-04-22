@@ -1,6 +1,6 @@
 import Fastify from "fastify";
 import { PrismaClient } from "@prisma/client";
-import routes from './routes/index'
+import routes from './routes/create-student.route'
 
 
 const app = Fastify();
