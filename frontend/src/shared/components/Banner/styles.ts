@@ -1,17 +1,18 @@
 import styled from "styled-components";
 
 interface BackgroundProps {
-  image: string;
+  $image: string;
 }
 
 export const BannerWrapper = styled.div`
   position: relative;
   height: 400px;
   overflow: hidden;
+  border-radius: 16px;
 `
 
 export const BannerBackground = styled.div<BackgroundProps>`
-  background-image: ${({ image }) => `url(${image})`};
+  background-image: url(${props => props.$image});
   background-size: cover;
   background-position: center;
   filter: blur(5px);
@@ -50,7 +51,7 @@ export const BannerContent = styled.div`
   }
 
   p {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-top: 10px;
     max-width: 600px;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);  
