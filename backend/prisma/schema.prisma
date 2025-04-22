@@ -25,48 +25,48 @@ model Estudante {
   createAt       DateTime @default(now())
   updatedAt      DateTime @updatedAt
 
-  responsavel             Responsavel?            @relation(fields: [responsavelId], references: [id])
-  responsavelId           Int?
-  endereco                Endereco?              @relation(fields: [enderecoId], references: [id])
-  enderecoId              Int?
-  informacoesAdicionais   InformacoesAdicionais? @relation(fields: [informacoesAdicionaisId], references: [id])
-  informacoesAdicionaisId Int?
+  responsavel             Responsavel?
+  endereco                Endereco?
+  informacoesAdicionaisId InformacoesAdicionais?
 }
 
 model Responsavel {
-  id              Int         @id @default(autoincrement())
-  nomeResponsavel String      @db.VarChar(255)
-  numeroContato   String      @db.VarChar(255)
-  rg              String      @db.VarChar(255)
-  cpf             String      @db.VarChar(255)
-  createAt        DateTime    @default(now())
-  updatedAt       DateTime    @updatedAt
-  Estudante       Estudante[]
+  id              Int       @id @default(autoincrement())
+  nomeResponsavel String    @db.VarChar(255)
+  numeroContato   String    @db.VarChar(255)
+  rg              String    @db.VarChar(255)
+  cpf             String    @db.VarChar(255)
+  createAt        DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  estudante       Estudante @relation(fields: [estudanteId], references: [id])
+  estudanteId     Int       @unique
 }
 
 model Endereco {
-  id        Int         @id @default(autoincrement())
-  cep       String      @db.Char(9)
-  rua       String
-  bairro    String
-  cidade    String
-  createAt  DateTime    @default(now())
-  updatedAt DateTime    @updatedAt
-  Estudante Estudante[]
+  id          Int       @id @default(autoincrement())
+  cep         String    @db.Char(9)
+  rua         String
+  bairro      String
+  cidade      String
+  createAt    DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  estudante   Estudante @relation(fields: [estudanteId], references: [id])
+  estudanteId Int       @unique
 }
 
 model InformacoesAdicionais {
-  id         Int         @id @default(autoincrement())
-  oficina    Oficina
-  horario    Turno
-  moradia    Moradia
-  auxilio    Boolean
-  transporte Boolean
-  moradores  String
-  divulgacao Boolean
-  createAt   DateTime    @default(now())
-  updatedAt  DateTime    @updatedAt
-  Estudante  Estudante[]
+  id          Int       @id @default(autoincrement())
+  oficina     Oficina
+  horario     Turno
+  moradia     Moradia
+  auxilio     Boolean
+  transporte  Boolean
+  moradores   String
+  divulgacao  Boolean
+  createAt    DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  estudante   Estudante @relation(fields: [estudanteId], references: [id])
+  estudanteId Int       @unique
 }
 
 // ENUMS

@@ -1,17 +1,18 @@
 import styled from "styled-components";
 
 interface BackgroundProps {
-  image: string;
+  $image: string;
 }
 
 export const BannerWrapper = styled.div`
   position: relative;
   height: 400px;
   overflow: hidden;
+  border-radius: 16px;
 `
 
 export const BannerBackground = styled.div<BackgroundProps>`
-  background-image: ${({ image }) => `url(${image})`};
+  background-image: url(${props => props.$image});
   background-size: cover;
   background-position: center;
   filter: blur(5px);

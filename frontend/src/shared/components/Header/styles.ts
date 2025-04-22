@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 import { Link } from "react-router-dom";
 
 export const HeaderContainer = styled.div`
@@ -10,15 +9,13 @@ export const HeaderContainer = styled.div`
 `
 export const HeaderTitle = styled.div`
   background-color: #B22222;
-
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
 
+  gap: 2rem;
   color: #fff;
   padding: .5rem;
-
 `
 
 export const HeaderLogo = styled.img`

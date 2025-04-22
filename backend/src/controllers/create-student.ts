@@ -8,7 +8,7 @@ export async function createStudentHandler(req: FastifyRequest, reply: FastifyRe
   try {
     const parsed = completeFormSchema.parse(req.body)
 
-    const estudante = await prisma.estudante.create({
+    const student = await prisma.estudante.create({
       data: {
         nomeCompleto: parsed.studentInfo.nomeCompleto,
         naturalidade: parsed.studentInfo.naturalidade,
