@@ -51,6 +51,7 @@ export const IntroductionContainer = styled.section`
 
   padding: 2rem;
   background-color: #fff;
+  border-radius: 16px;
 
   @media (max-width: 768px) {
     padding: 1.5rem;
@@ -69,6 +70,8 @@ export const MissionContainer = styled.section`
 
   padding: 2rem;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  
   @media (max-width: 768px) {
     padding: 1.5rem;
   }
@@ -95,6 +98,7 @@ export const ProjectList = styled.ul`
   }
 `;
 
+// Alterar nome desse componente styled components:
 export const ProjectCard = styled.figure`
   display: flex;
   flex-direction: column;

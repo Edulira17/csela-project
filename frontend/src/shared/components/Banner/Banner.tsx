@@ -1,10 +1,10 @@
 import { BannerBackground, BannerContent, BannerWrapper } from "./styles";
-import ImageBanner from './images/imageEcae.png'
+import imageEcae from './images/imageEcae.png'
 
 const SimpleBanner = () => {
   return (
     <BannerWrapper>
-      <BannerBackground image={ImageBanner} />
+      <BannerBackground $image={imageEcae} />
       <BannerContent>
         <h1>Bem-vindo ao CSELA</h1>
         <p>Educação, Cultura e Transformação Social</p>
