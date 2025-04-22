@@ -11,7 +11,7 @@ import {
   BannerContainer
 } from "./styles";
 import projectsOfferedData from './projectsOfferedData'
-import ButtonLearnMore from "../../shared/components/Buttons/CustomButton";
+import ButtonLearnMore from "../../shared/components/ui/Buttons/CustomButton";
 import SimpleBanner from "../../shared/components/Banner/Banner";
 
 
