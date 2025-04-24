@@ -17,9 +17,8 @@ export const studentInfo = z.object({
 
   dataNascimento: z
     .string()
-    .min(1, "Este campo é obrigatório")
-    .regex(/^\d{2}\/\d{2}\/\d{4}$/, "Formato inválido (dd/mm/aaaa)"),
-
+    .min(1, "Este campo é obrigatório"),
+    
   escola: z
     .string()
     .min(1, "Este campo é obrigatório"),
