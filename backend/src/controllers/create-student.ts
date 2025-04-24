@@ -22,48 +22,42 @@ export async function createStudentHandler(
         escola: parsed.studentInfo.escola,
         serie: parsed.studentInfo.serie,
         turno: parsed.studentInfo.turno,
-      },
-    });
-    await prisma.responsavel.create({
-      data: {
-        nomeResponsavel: parsed.responsibleInfo.nomeResponsavel,
-        numeroContato: parsed.responsibleInfo.numeroContato,
-        rg: parsed.responsibleInfo.rg,
-        cpf: parsed.responsibleInfo.cpf,
-        estudante: {
-          connect: { id: student.id },
+
+        responsavel: {
+          create: {
+            nomeResponsavel: parsed.responsibleInfo.nomeResponsavel,
+            numeroContato: parsed.responsibleInfo.numeroContato,
+            rg: parsed.responsibleInfo.rg,
+            cpf: parsed.responsibleInfo.cpf,
+          },
         },
-      },
-    });
-    await prisma.endereco.create({
-      data: {
-        cep: parsed.addressInfo.cep,
-        rua: parsed.addressInfo.rua,
-        bairro: parsed.addressInfo.bairro,
-        cidade: parsed.addressInfo.cidade,
-        estudante: {
-          connect: { id: student.id },
+
+        endereco: {
+          create: {
+            cep: parsed.addressInfo.cep,
+            rua: parsed.addressInfo.rua,
+            bairro: parsed.addressInfo.bairro,
+            cidade: parsed.addressInfo.cidade,
+          },
         },
-      },
-    });
-    await prisma.informacoesAdicionais.create({
-      data: {
-        oficina: parsed.additionalInfo.oficina,
-        horario: parsed.additionalInfo.horario,
-        moradia: parsed.additionalInfo.moradia,
-        auxilio: parsed.additionalInfo.auxilio === "sim",
-        transporte: parsed.additionalInfo.transporte === "sim",
-        moradores: parsed.additionalInfo.moradores,
-        divulgacao: parsed.additionalInfo.divulgacao === "sim",
-        estudante: {
-          connect: { id: student.id },
+
+        informacoesAdicionais: {
+          create: {
+            oficina: parsed.additionalInfo.oficina,
+            horario: parsed.additionalInfo.horario,
+            moradia: parsed.additionalInfo.moradia,
+            auxilio: parsed.additionalInfo.auxilio === "sim",
+            transporte: parsed.additionalInfo.transporte === "sim",
+            moradores: parsed.additionalInfo.moradores,
+            divulgacao: parsed.additionalInfo.divulgacao === "sim",
+          },
         },
       },
     });
 
     return reply
       .code(201)
-      .send({ message: "Estudante cadastrado com sucesso" });
+      .send({ message: "Estudante cadastrado com sucesso", student });
   } catch (error) {
     console.error(error);
     return reply

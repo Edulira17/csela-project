@@ -27,7 +27,7 @@ model Estudante {
 
   responsavel             Responsavel?
   endereco                Endereco?
-  informacoesAdicionaisId InformacoesAdicionais?
+  informacoesAdicionais InformacoesAdicionais?
 }
 
 model Responsavel {
@@ -43,19 +43,19 @@ model Responsavel {
 }
 
 model Endereco {
-  id          Int       @id @default(autoincrement())
-  cep         String    @db.Char(9)
+  id          Int        @id @default(autoincrement())
+  cep         String     @db.Char(9)
   rua         String
   bairro      String
   cidade      String
-  createAt    DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
-  estudante   Estudante @relation(fields: [estudanteId], references: [id])
-  estudanteId Int       @unique
+  createAt    DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  estudante   Estudante? @relation(fields: [estudanteId], references: [id])
+  estudanteId Int        @unique
 }
 
 model InformacoesAdicionais {
-  id          Int       @id @default(autoincrement())
+  id          Int        @id @default(autoincrement())
   oficina     Oficina
   horario     Turno
   moradia     Moradia
@@ -63,10 +63,10 @@ model InformacoesAdicionais {
   transporte  Boolean
   moradores   String
   divulgacao  Boolean
-  createAt    DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
-  estudante   Estudante @relation(fields: [estudanteId], references: [id])
-  estudanteId Int       @unique
+  createAt    DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  estudante   Estudante? @relation(fields: [estudanteId], references: [id])
+  estudanteId Int        @unique
 }
 
 // ENUMS
