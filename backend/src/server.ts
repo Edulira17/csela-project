@@ -7,10 +7,12 @@ const app = Fastify();
 const prisma = new PrismaClient();
 
 app.register(cors, {
-  origin: "http://localhost:5173/",
+  origin: "http://localhost:5173",
   methods: ["POST", "GET"],
-  allowedHeaders: ["Content-Type"]
+  allowedHeaders: ["Content-Type"],
 });
+
+app.register(routes, { prefix: "/api" });
 
 app.get("/", () => {
   return "Server is running";
