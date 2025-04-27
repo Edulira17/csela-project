@@ -7,14 +7,22 @@ import AdditionalInfo from "../../shared/components/FormSections/AdditionalInfo"
 import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { completeFormSchema, FormData } from "../../validations/registration-student-schema";
+import axios from "axios";
+
 
 const Formulario = () => {
   const methods = useForm<FormData>({
     resolver: zodResolver(completeFormSchema)
   })
 
-  const sendFormData = (data: FormData) => {
-    console.log(data)
+  const sendFormData = async(data: FormData) => {
+    try {
+      await axios.post('http://localhost:3333/api/students', data);
+      alert('Matricula realizada com sucesso')
+    } catch (error) {
+      console.error(error);
+      alert('Erro ao tentar realizar a matrícula')
+    }
   }
 
   return (
