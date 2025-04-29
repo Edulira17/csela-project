@@ -1,6 +1,6 @@
-import { HeaderContainer, HeaderNav, HeaderLink, HeaderTitle, HeaderLogo, DropdownMenuButton, DropdownMenuContainer } from "./styles";
+import { HeaderContainer, HeaderNav, HeaderLink, HeaderTitle, HeaderLogo, MobileMenuIcon, MobileMenuContainer  } from "./styles";
 import LogoCsela from './assets/LOGO CSELA.png'
-import { useDebugValue, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Header = () => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -11,33 +11,31 @@ const Header = () => {
     setIsDropdownOpen((prev) => !prev);
   }
 
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+    if (window.innerWidth > 768) setIsDropdownOpen(false);
+  };
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-    handleResize();
-
-
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
-    const handleTouchOutside = (event: TouchEvent) => {
+    const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsDropdownOpen(false);
-      };
-
-      if (isMobile && isDropdownOpen) {
-        document.addEventListener("touchstart", handleTouchOutside);
-      };
-
-      return () => {
-        document.addEventListener("touchstart", handleTouchOutside);
       }
     }
-  }, [isMobile, isDropdownOpen]);
+
+    if (isDropdownOpen) {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+  }, [isDropdownOpen])
 
   return (
     <HeaderContainer>
@@ -45,30 +43,29 @@ const Header = () => {
         <HeaderLogo src={LogoCsela} alt="Logo do CSELA" />
         <h1>CENTRO SOCIAL E EDUCAIONAL DO LAGO DO ALEIXO - CSELA</h1>
       </HeaderTitle>
-      {!isMobile && (
+      {isMobile ? (
+        <div style={{ position: "relative" }}>
+          <MobileMenuIcon onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+            ☰
+          </MobileMenuIcon>
+          {isDropdownOpen && (
+            <MobileMenuContainer ref={dropdownRef}>
+              <HeaderLink to="/" onClick={() => setIsDropdownOpen(false)}>Início</HeaderLink>
+              <HeaderLink to="/history" onClick={() => setIsDropdownOpen(false)}>História</HeaderLink>
+              <HeaderLink to="/workshops" onClick={() => setIsDropdownOpen(false)}>Oficinas</HeaderLink>
+              <HeaderLink to="/forms" onClick={() => setIsDropdownOpen(false)}>Matricule-se</HeaderLink>
+            </MobileMenuContainer>
+          )}
+        </div>
+      ) : (
         <HeaderNav>
           <HeaderLink to="/">Início</HeaderLink>
-          <HeaderLink to="history">História</HeaderLink>
-          <HeaderLink to="workshops">Oficinas</HeaderLink>
-          <HeaderLink to="forms">Matricule-se</HeaderLink>
+          <HeaderLink to="/history">História</HeaderLink>
+          <HeaderLink to="/workshops">Oficinas</HeaderLink>
+          <HeaderLink to="/forms">Matricule-se</HeaderLink>
         </HeaderNav>
       )}
 
-      {isMobile && (
-        <>
-          <DropdownMenuButton onClick={toggleDropdown}>☰ Menu</DropdownMenuButton>
-          {
-            isMobile && (
-              <DropdownMenuContainer ref={dropdownRef}>
-                <HeaderLink to="/" onClick={() => setIsDropdownOpen(false)}>Início</HeaderLink>
-                <HeaderLink to="/history" onClick={() => setIsDropdownOpen(false)}>História</HeaderLink>
-                <HeaderLink to="/workshops" onClick={() => setIsDropdownOpen(false)}>Oficinas</HeaderLink>
-                <HeaderLink to="/forms" onClick={() => setIsDropdownOpen(false)}>Matricule-se</HeaderLink>
-              </DropdownMenuContainer>
-            )
-          }
-        </>
-      )}
     </HeaderContainer>
   );
 };

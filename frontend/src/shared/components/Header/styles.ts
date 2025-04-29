@@ -48,7 +48,7 @@ export const HeaderLink = styled(Link)`
   }
 `
 
-export const DropdownMenuButton = styled.button`
+export const MobileMenuIcon  = styled.button`
   margin-top: 1rem;
   background: none;
   border: none;
@@ -56,7 +56,7 @@ export const DropdownMenuButton = styled.button`
   cursor: pointer;
 `
 
-export const DropdownMenuContainer = styled.div`
+export const MobileMenuContainer  = styled.div`
   position: absolute;
   top: 100px;
   right: 20px;
