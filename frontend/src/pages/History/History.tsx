@@ -1,19 +1,15 @@
 import {
   HistoryContainer,
-  HistoryContent,
-  Illustration,
-  TextContainer,
+  HistoryContent, TextContainer,
   TitleContainer,
-  TitleHistory,
+  TitleHistory
 } from "./style";
-import IllustrationHourglass from "./assets/hourglass-time-watch-svgrepo-com.svg";
 
 const History = () => {
   return (
     <HistoryContainer>
       <HistoryContent>
         <TitleContainer>
-          <Illustration src={IllustrationHourglass} alt="" />
           <TitleHistory>
             Centro Social e Educacional do Lago do Aleixo
           </TitleHistory>

@@ -48,6 +48,31 @@ export const HeaderLink = styled(Link)`
   }
 `
 
+export const DropdownMenuButton = styled.button`
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+`
+
+export const DropdownMenuContainer = styled.div`
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 999;
+
+`
+
+
+
 
 
 

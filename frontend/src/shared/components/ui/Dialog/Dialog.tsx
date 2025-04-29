@@ -28,7 +28,6 @@ const ButtonLearnMore: React.FC<ButtonKnowProps> = ({ children, title, paragraph
         {children}
       </CustomButton>
 
-      {/* refactor dialog -> componentizar o dialog*/}
       <StyledDialog onClose={handleClose} open={open}>
         <DialogTitle variant='h5'>{title}</DialogTitle>
         <DialogContent>

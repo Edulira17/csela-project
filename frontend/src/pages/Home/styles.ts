@@ -24,8 +24,7 @@ export const HomeContent = styled.main`
   align-items: center;
 
   margin-top: 2rem;
-  gap: 2rem;
-
+  gap: 2.5rem;
 `;
 
 export const HomeTitle = styled.h1`
@@ -36,40 +35,26 @@ export const HomeTitle = styled.h1`
   display: flex;
   align-items: center;
   gap: 1rem;
-`;
 
-export const IntroductionContainer = styled.section`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem;
-
-  padding: 2rem;
-  background-color: #fff;
-  border-radius: 16px;
-
-  @media (max-width: 768px) {
-    padding: 1.5rem;
+  @media screen and (max-width: 768px){
+    font-size: 1.7rem;
+    text-align: center;
   }
 `;
 
-export const MissionContainer = styled.section`
+export const HomeContentText = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 25px;
-
+  justify-content: center;
   align-items: center;
-  margin-bottom: 3rem;
+  gap: 1rem;
+  padding: 1.5rem;
   background-color: #fff;
-
-  padding: 2rem;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
 
-  @media (max-width: 768px) {
-    padding: 1.5rem;
+  @media screen and (max-width: 768px) {
+    padding: 1rem;
   }
 `;
 
@@ -78,6 +63,11 @@ export const TextContainer = styled.article`
   padding: 2rem;
   text-align: justify;
   font-size: 1.2rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 1rem;
+    font-size: .9rem;
+  }
 `
 
 export const ProjectList = styled.ul`

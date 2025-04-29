@@ -2,8 +2,7 @@ import {
   HomeContainer,
   HomeContent,
   HomeTitle,
-  IntroductionContainer,
-  MissionContainer,
+  HomeContentText,
   ProjectList,
   ProjectCard,
   DescriptionProject,
@@ -11,7 +10,7 @@ import {
   BannerContainer
 } from "./styles";
 import projectsOfferedData from './projectsOfferedData'
-import ButtonLearnMore from "../../shared/components/ui/Buttons/CustomButton";
+import ButtonLearnMore from "../../shared/components/ui/Dialog/Dialog";
 import SimpleBanner from "../../shared/components/Banner/Banner";
 
 
@@ -25,7 +24,7 @@ const Home = () => {
         <HomeTitle>
           🤝 CSELA: Compromisso com a Comunidade
         </HomeTitle>
-        <IntroductionContainer>
+        <HomeContentText>
           <TextContainer>
             <p >
               <strong>O Centro Social e Educacional do Lago do Aleixo (CSELA)</strong> é uma instituição comprometida com o desenvolvimento social e educacional da comunidade. Através de uma série de projetos, o CSELA busca proporcionar oportunidades para crianças, jovens e adultos, incentivando a arte, o esporte, a cultura e a cidadania.
@@ -51,13 +50,13 @@ const Home = () => {
               procura-se fazer com que a lógica da prática cooperativa seja
               compreendida pela população do Bairro.</p>
           </TextContainer>
-        </IntroductionContainer>
+        </HomeContentText>
         <HomeTitle>
           🌟 Nossa missão
         </HomeTitle>
-        <MissionContainer>
+        <HomeContentText>
           <TextContainer>
-            <section className="text-mission">
+            <section>
               <p>{" "}
                 O Centro Social e Educacional do Lago do Aleixo (CSELA) é uma organização comprometida com a transformação social da comunidade da Colônia Antônio Aleixo, em Manaus. Atuando há anos com dedicação e propósito, o CSELA desenvolve projetos que impactam positivamente a vida de crianças, adolescentes e famílias em situação de vulnerabilidade.
                 <br />
@@ -83,7 +82,7 @@ const Home = () => {
               </ProjectCard>
             ))}
           </ProjectList>
-        </MissionContainer>
+        </HomeContentText>
       </HomeContent>
     </HomeContainer>
   );
