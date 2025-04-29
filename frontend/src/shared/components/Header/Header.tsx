@@ -45,14 +45,14 @@ const Header = () => {
         <HeaderLogo src={LogoCsela} alt="Logo do CSELA" />
         <h1>CENTRO SOCIAL E EDUCAIONAL DO LAGO DO ALEIXO - CSELA</h1>
       </HeaderTitle>
-      {isMobile && (
+      {!isMobile && (
         <HeaderNav>
           <HeaderLink to="/">Início</HeaderLink>
           <HeaderLink to="history">História</HeaderLink>
           <HeaderLink to="workshops">Oficinas</HeaderLink>
           <HeaderLink to="forms">Matricule-se</HeaderLink>
         </HeaderNav>
-      )};
+      )}
 
       {isMobile && (
         <>
