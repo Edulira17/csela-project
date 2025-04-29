@@ -54,12 +54,16 @@ export const MobileMenuIcon  = styled.button`
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
+
+  .menu-dropdown-icon{
+    background-color: #fff;
+  }
 `
 
 export const MobileMenuContainer  = styled.div`
   position: absolute;
-  top: 100px;
-  right: 20px;
+  top: 135px;
+  left: 30px;
   background: #fff;
   border: 1px solid #ccc;
   border-radius: 8px;

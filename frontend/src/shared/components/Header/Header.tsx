@@ -1,6 +1,15 @@
-import { HeaderContainer, HeaderNav, HeaderLink, HeaderTitle, HeaderLogo, MobileMenuIcon, MobileMenuContainer  } from "./styles";
-import LogoCsela from './assets/LOGO CSELA.png'
+import {
+  HeaderContainer,
+  HeaderNav,
+  HeaderLink,
+  HeaderTitle,
+  HeaderLogo,
+  MobileMenuIcon,
+  MobileMenuContainer,
+} from "./styles";
+import LogoCsela from "./assets/LOGO CSELA.png";
 import { useEffect, useRef, useState } from "react";
+import { FaBars } from "react-icons/fa";
 
 const Header = () => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -9,7 +18,7 @@ const Header = () => {
 
   const toggleDropdown = () => {
     setIsDropdownOpen((prev) => !prev);
-  }
+  };
 
   const handleResize = () => {
     setIsMobile(window.innerWidth <= 768);
@@ -23,10 +32,13 @@ const Header = () => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsDropdownOpen(false);
       }
-    }
+    };
 
     if (isDropdownOpen) {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -34,8 +46,8 @@ const Header = () => {
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
-    }
-  }, [isDropdownOpen])
+    };
+  }, [isDropdownOpen]);
 
   return (
     <HeaderContainer>
@@ -44,16 +56,30 @@ const Header = () => {
         <h1>CENTRO SOCIAL E EDUCAIONAL DO LAGO DO ALEIXO - CSELA</h1>
       </HeaderTitle>
       {isMobile ? (
-        <div style={{ position: "relative" }}>
+        <div>
           <MobileMenuIcon onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-            ☰
+            <FaBars className="menu-dropdown-icon"/>
           </MobileMenuIcon>
           {isDropdownOpen && (
             <MobileMenuContainer ref={dropdownRef}>
-              <HeaderLink to="/" onClick={() => setIsDropdownOpen(false)}>Início</HeaderLink>
-              <HeaderLink to="/history" onClick={() => setIsDropdownOpen(false)}>História</HeaderLink>
-              <HeaderLink to="/workshops" onClick={() => setIsDropdownOpen(false)}>Oficinas</HeaderLink>
-              <HeaderLink to="/forms" onClick={() => setIsDropdownOpen(false)}>Matricule-se</HeaderLink>
+              <HeaderLink to="/" onClick={() => setIsDropdownOpen(false)}>
+                Início
+              </HeaderLink>
+              <HeaderLink
+                to="/history"
+                onClick={() => setIsDropdownOpen(false)}
+              >
+                História
+              </HeaderLink>
+              <HeaderLink
+                to="/workshops"
+                onClick={() => setIsDropdownOpen(false)}
+              >
+                Oficinas
+              </HeaderLink>
+              <HeaderLink to="/forms" onClick={() => setIsDropdownOpen(false)}>
+                Matricule-se
+              </HeaderLink>
             </MobileMenuContainer>
           )}
         </div>
@@ -65,7 +91,6 @@ const Header = () => {
           <HeaderLink to="/forms">Matricule-se</HeaderLink>
         </HeaderNav>
       )}
-
     </HeaderContainer>
   );
 };
