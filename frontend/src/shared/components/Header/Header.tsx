@@ -54,36 +54,31 @@ const Header = () => {
       <HeaderTitle>
         <HeaderLogo src={LogoCsela} alt="Logo do CSELA" />
         <h1>CENTRO SOCIAL E EDUCAIONAL DO LAGO DO ALEIXO - CSELA</h1>
-      </HeaderTitle>
-      {isMobile ? (
-        <div>
+        {isMobile && (
           <MobileMenuIcon onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-            <FaBars className="menu-dropdown-icon"/>
+            <FaBars className="menu-dropdown-icon" />
           </MobileMenuIcon>
-          {isDropdownOpen && (
-            <MobileMenuContainer ref={dropdownRef}>
-              <HeaderLink to="/" onClick={() => setIsDropdownOpen(false)}>
-                Início
-              </HeaderLink>
-              <HeaderLink
-                to="/history"
-                onClick={() => setIsDropdownOpen(false)}
-              >
-                História
-              </HeaderLink>
-              <HeaderLink
-                to="/workshops"
-                onClick={() => setIsDropdownOpen(false)}
-              >
-                Oficinas
-              </HeaderLink>
-              <HeaderLink to="/forms" onClick={() => setIsDropdownOpen(false)}>
-                Matricule-se
-              </HeaderLink>
-            </MobileMenuContainer>
-          )}
-        </div>
-      ) : (
+        )}
+      </HeaderTitle>
+
+      {isMobile && isDropdownOpen && (
+        <MobileMenuContainer ref={dropdownRef}>
+          <HeaderLink to="/" onClick={() => setIsDropdownOpen(false)}>
+            Início
+          </HeaderLink>
+          <HeaderLink to="/history" onClick={() => setIsDropdownOpen(false)}>
+            História
+          </HeaderLink>
+          <HeaderLink to="/workshops" onClick={() => setIsDropdownOpen(false)}>
+            Oficinas
+          </HeaderLink>
+          <HeaderLink to="/forms" onClick={() => setIsDropdownOpen(false)}>
+            Matricule-se
+          </HeaderLink>
+        </MobileMenuContainer>
+      )}
+
+      {!isMobile && (
         <HeaderNav>
           <HeaderLink to="/">Início</HeaderLink>
           <HeaderLink to="/history">História</HeaderLink>
@@ -92,6 +87,7 @@ const Header = () => {
         </HeaderNav>
       )}
     </HeaderContainer>
+
   );
 };
 
