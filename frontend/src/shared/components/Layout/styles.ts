@@ -9,7 +9,7 @@ export const LayoutContainer = styled.div`
   background-color: #ccc;
 `
 
-export const LayoutMainContent = styled.main`
+export const Content = styled.main`
   width: 100%;
   flex: 1;
   display: flex;
