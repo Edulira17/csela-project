@@ -53,7 +53,7 @@ const Header = () => {
     <HeaderContainer>
       <HeaderTitle>
         <HeaderLogo src={LogoCsela} alt="Logo do CSELA" />
-        <h1>CENTRO SOCIAL E EDUCAIONAL DO LAGO DO ALEIXO - CSELA</h1>
+        <h1>CENTRO SOCIAL E EDUCAIONAL DO LAGO DO ALEIXO</h1>
         {isMobile && (
           <MobileMenuIcon onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
             <FaBars className="menu-dropdown-icon" />

@@ -58,6 +58,7 @@ export const HeaderNav = styled.nav`
 export const HeaderLink = styled(Link)`
   background-color: #B22222;
   color: #fff;
+  font-weight: bold;
   border-radius: 10px;
 
   padding: .3rem 2.3rem;
@@ -66,7 +67,6 @@ export const HeaderLink = styled(Link)`
 
   &:hover {
     background-color: #fff;
-    box-shadow: 0 0 0 1px black;
     color: red;
   }
 `
