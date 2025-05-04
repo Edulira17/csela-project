@@ -54,17 +54,36 @@ const History = () => {
           </article>
         </TextContainer>
         {/*Part 2*/}
-        <TitleHistory color="#D2691E">Espaço Cidadão de Arte e Educação (ECAE)</TitleHistory>
+        <TitleHistory color="#D2691E">
+          Espaço Cidadão de Arte e Educação (ECAE)
+        </TitleHistory>
         <TextContainer>
           <article>
             <section>
-              Desde sua fundação, o ECAE estruturou-se como um espaço de
-              educação complementar, promovendo oficinas de leitura e arte que
-              são planejadas anualmente para atender às necessidades dos
-              estudantes. Essas atividades não apenas auxiliam no
-              desenvolvimento acadêmico, mas também incentivam a criatividade e
-              a expressão cultural, contribuindo para a formação cidadã dos
-              participantes.
+              Desde a sua fundação, o Espaço de Cultura, Arte e Educação (ECAE)
+              em Manaus tem se consolidado como um importante centro de educação
+              complementar voltado ao fortalecimento do aprendizado, da
+              expressão artística e do desenvolvimento social de crianças e
+              adolescentes. Criado com o propósito de ampliar as oportunidades
+              educacionais oferecidas aos estudantes da rede pública, o ECAE
+              surgiu como uma resposta à necessidade de integrar práticas
+              pedagógicas inovadoras com atividades culturais e criativas.
+              <br />
+              <br />
+              Ao longo dos anos, o ECAE estruturou-se como um ambiente acolhedor
+              e inspirador, oferecendo oficinas planejadas anualmente com foco
+              em leitura, artes visuais, teatro, música e outras formas de
+              expressão. Essas ações são organizadas por educadores
+              comprometidos com a formação integral dos participantes, buscando
+              atender às demandas específicas de cada comunidade escolar.
+              <br />
+              <br />
+              Mais do que um espaço de reforço escolar, o ECAE tornou-se um polo
+              de valorização da cultura local e de estímulo à cidadania. Suas
+              oficinas promovem o desenvolvimento de habilidades cognitivas e
+              socioemocionais, contribuindo de maneira significativa para a
+              melhoria do desempenho escolar e para o fortalecimento da
+              autoestima dos estudantes.
             </section>
           </article>
         </TextContainer>
