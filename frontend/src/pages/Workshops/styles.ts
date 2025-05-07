@@ -20,6 +20,7 @@ export const AboutWorkshops = styled.section`
 
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1.8rem;
   
   .about-title {
@@ -27,18 +28,19 @@ export const AboutWorkshops = styled.section`
     color: #b22222;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 1.5rem;
     @media (max-width: 768px) {
       font-size: 1.5rem;
     }
   }
 
   .about-text {
+    width: 80%; 
     font-size: 1rem;
     line-height: 1.8;
     text-align: justify;
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       font-size: 1rem;
+      text-align: center;
     }
   }
 
@@ -46,43 +48,41 @@ export const AboutWorkshops = styled.section`
 
 // Cards
 export const CardWrapper = styled.div`
+  max-width: 1080px;
+  margin: 0 auto;
   padding: 0 2rem;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(250px, 1fr));
-  gap: 2rem;
+
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-
-  // 2 colunas para telas menores que 768px
-  @media screen and (max-width: 768px) {
-    grid-template-columns: repeat(2, minmax(250px, 1fr));
-  }
-
-  // 1 colunas para telas menores que 480px
-  @media screen and (max-width: 768px) {
-    grid-template-columns: repeat(1, minmax(250px, 1fr));
-  }
+  gap: 2rem;
 `;
 
 export const Card = styled.figure`
+  flex: 1 1 300px;
+  max-width: 300px;
+  background-color: #a71e22;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 100%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  background-color: #b22222;
-  padding: 1.5rem;
 
   img {
-    width: 250px;
+    width: 100%;
     height: 250px;
     object-fit: cover;
     border-radius: 8px;
   }
 
   .card-description {
-    max-width: 80%;  
+    max-width: 80%; 
+  }
+
+  @media screen and (max-width: 768px) {  
+    max-width: 400px;
   }
 `;
 
@@ -106,16 +106,4 @@ export const SubtitleImage = styled.p`
     font-size: 0.7rem;
   }
 `;
-
-// export const DescriptionImage = styled.figcaption`
-//   font-size: 0.7rem;
-//   margin-top: 1rem;
-
-//   display: flex;
-//   flex-direction: column;
-//   align-items: start;
-
-//   max-width: 100%;
-//   gap: 0.5rem;
-// `;
 
