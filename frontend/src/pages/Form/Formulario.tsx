@@ -19,6 +19,7 @@ const Formulario = () => {
     try {
       await axios.post('http://localhost:3333/api/students', data);
       alert('Matricula realizada com sucesso')
+      methods.reset();
     } catch (error) {
       console.error(error);
       alert('Erro ao tentar realizar a matrícula')
@@ -38,11 +39,11 @@ const Formulario = () => {
           <h2>INFORMAÇÕES ADICIONAIS</h2>
           <AdditionalInfo />
           <ActionsContainer>
-            <Button size="medium" variant="contained" color="warning" type="button">
+            <Button size="medium" variant="contained" color="warning" type="button" onClick={() => methods.reset()}>
               Limpar
             </Button>
             <Button size="medium" variant="contained" color="success" type="submit">
-              Registrar
+              Enviar
             </Button>
           </ActionsContainer>
         </FormContainer>
