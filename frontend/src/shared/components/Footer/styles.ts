@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FooterContainer = styled.footer`
+export const Footer = styled.footer`
   width: 100%;
   height: auto;
   background-color: #b22222;
@@ -69,14 +69,13 @@ export const TalkUsContainer = styled.div`
   padding: 2rem;
 `;
 
-export const IconContainer = styled.div`
+export const SocialContainer = styled.div`
   display: flex;
   gap: 20px;
 
   .icon {
     font-size: 1.5rem;
     color: #c1c1c1;
-
     cursor: pointer;
     transition: 0.3s;
   }

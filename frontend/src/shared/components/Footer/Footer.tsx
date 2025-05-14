@@ -1,11 +1,11 @@
 import {
-  FooterContainer,
+  Footer,
   AddressContainer,
   LogoFooter,
   LinkAddress,
   AboutUsContainer,
   TalkUsContainer,
-  IconContainer,
+  SocialContainer,
 } from "./styles";
 
 import { FaInstagram, FaFacebook } from "react-icons/fa";
@@ -15,7 +15,7 @@ import LogoCsela from "./assets/LOGO CSELA.png";
 
 function Footer() {
   return (
-    <FooterContainer>
+    <Footer>
       <AddressContainer>
         <LogoFooter src={LogoCsela} />
         <h4>Endereço:</h4>
@@ -34,7 +34,7 @@ function Footer() {
       </AboutUsContainer>
       <TalkUsContainer>
         <h3>Fale Conosco:</h3>
-        <IconContainer>
+        <SocialContainer>
           <a href="#">
             <FaInstagram className="icon" />
           </a>
@@ -44,9 +44,9 @@ function Footer() {
           <a href="#">
             <MdEmail className="icon" />
           </a>
-        </IconContainer>
+        </SocialContainer>
       </TalkUsContainer>
-    </FooterContainer>
+    </Footer>
   );
 }
 
