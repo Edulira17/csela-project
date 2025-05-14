@@ -25,6 +25,8 @@ export const FormContainer = styled.form`
   gap: 1.5rem;
 
   h2{
+    color:rgb(95, 95, 95);
+    font-weight: 800;
     text-align: center;
   }
 `;
@@ -34,7 +36,6 @@ export const ActionsContainer = styled.div`
   display: flex;
   justify-content: center;
   gap: 1rem;
-  
   padding: 1rem;
 `;
 

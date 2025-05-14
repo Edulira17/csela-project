@@ -30,7 +30,7 @@ const Formulario = () => {
     <FormProvider {...methods}>
       <ResponsiveContainerForm>
         <FormContainer onSubmit={methods.handleSubmit(sendFormData)}>
-          <h2>DADOS DOS ALUNOS</h2>
+          <h2>DADOS DO ESTUDANTE</h2>
           <StudentSection />
           <h2>DADOS DO RESPONSÁVEL</h2>
           <ResponsibleSection />
