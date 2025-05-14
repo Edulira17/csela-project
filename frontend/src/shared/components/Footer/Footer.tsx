@@ -1,5 +1,5 @@
 import {
-  Footer,
+  FooterWrapper,
   AddressContainer,
   LogoFooter,
   LinkAddress,
@@ -15,7 +15,7 @@ import LogoCsela from "./assets/LOGO CSELA.png";
 
 function Footer() {
   return (
-    <Footer>
+    <FooterWrapper>
       <AddressContainer>
         <LogoFooter src={LogoCsela} />
         <h4>Endereço:</h4>
@@ -46,7 +46,7 @@ function Footer() {
           </a>
         </SocialContainer>
       </TalkUsContainer>
-    </Footer>
+    </FooterWrapper>
   );
 }
 
