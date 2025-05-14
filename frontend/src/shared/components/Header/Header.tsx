@@ -16,9 +16,9 @@ const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen((prev) => !prev);
-  };
+  // const toggleDropdown = () => {
+  //   setIsDropdownOpen((prev) => !prev);
+  // };
 
   const handleResize = () => {
     setIsMobile(window.innerWidth <= 768);
@@ -73,7 +73,7 @@ const Header = () => {
             Oficinas
           </HeaderLink>
           <HeaderLink to="/forms" onClick={() => setIsDropdownOpen(false)}>
-            Matricule-se
+            Solicitar Matrícula
           </HeaderLink>
         </MobileMenuContainer>
       )}
@@ -83,7 +83,7 @@ const Header = () => {
           <HeaderLink to="/">Início</HeaderLink>
           <HeaderLink to="/history">História</HeaderLink>
           <HeaderLink to="/workshops">Oficinas</HeaderLink>
-          <HeaderLink to="/forms">Matricule-se</HeaderLink>
+          <HeaderLink to="/forms">Solicitar Matrícula</HeaderLink>
         </HeaderNav>
       )}
     </HeaderContainer>
