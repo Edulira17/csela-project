@@ -39,19 +39,19 @@ export const responsibleInfo = z.object({
 
   numeroContato: z
     .string()
-    .regex(/^\(\d{2}\) \d{5}-\d{4}$/, "Número de contato inválido. Formato esperado: (99) 99999-9999"),
+    .regex(/^\(\d{2}\) \d{5}-\d{4}$/, "Por favor, insira um número de contato válido."),
   rg: z
     .string()
-    .regex(/^\d{7}-\d$/, "RG inválido. Formato esperado: 9999999-9"),
+    .regex(/^\d{7}-\d$/, "Insira um RG válido. Formato esperado: 9999999-9"),
   cpf: z
     .string()
-    .regex(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/, "CPF inválido. Formato esperado: 999.999.999-99"),
+    .regex(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/, "Insira um CPF válido. Formato esperado: 999.999.999-99"),
 });
 
 export const addressInfo = z.object({
   cep: z
     .string()
-    .regex(/^\d{5}-\d{3}$/, "CEP inválido (Ex: 99999-999)"),
+    .regex(/^\d{5}-\d{3}$/, "Por favor, insira um CEP válido."),
 
   rua: z
     .string()
@@ -67,7 +67,7 @@ export const addressInfo = z.object({
 });
 
 export const additionalInfo = z.object({
-  oficina: z.enum(["artes", "violao", "jiujitsu", "n1", "n2", "n3"], {
+  oficina: z.enum(["artes", "violao", "jiujitsu", "nivel1", "nivel2", "nivel3"], {
     errorMap: () => ({ message: "Selecione uma oficina válida" })
   }),
   horario: z.enum(["matutino", "vespertino"], {

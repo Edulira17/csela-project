@@ -68,7 +68,7 @@ export const addressInfo = z.object({
 });
 
 export const additionalInfo = z.object({
-  oficina: z.enum(["artes", "violao", "jiu-jitsu", "n1", "n2", "n3"], {
+  oficina: z.enum(["artes", "violao", "jiujitsu", "nivel1", "nivel2", "nivel3"], {
     errorMap: () => ({ message: "Selecione uma oficina válida" })
   }),
   horario: z.enum(["matutino", "vespertino"], {

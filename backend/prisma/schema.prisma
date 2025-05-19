@@ -76,12 +76,12 @@ enum Turno {
 }
 
 enum Oficina {
-  artes
+  artes 
   violao
   jiujitsu
-  n1
-  n2
-  n3
+  nivel1
+  nivel2
+  nivel3
 }
 
 enum Moradia {
