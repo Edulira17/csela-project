@@ -14,10 +14,10 @@ const AdditionalInfo = () => {
         <option value="">Selecione uma opção</option>
         <option value="artes">Artes Plásticas</option>
         <option value="violao">Violão</option>
-        <option value="jiu-jitsu">Jiu-Jitsu</option>
-        <option value="n1">Nível 1</option>
-        <option value="n2">Nível 2</option>
-        <option value="n3">Nível 3</option>
+        <option value="jiujitsu">Jiu-Jitsu</option>
+        <option value="nivel1">Nível 1</option>
+        <option value="nivel2">Nível 2</option>
+        <option value="nivel3">Nível 3</option>
       </Select>
       {errors.additionalInfo?.oficina && (
         <span className="error-message">{errors.additionalInfo.oficina.message as string}</span>

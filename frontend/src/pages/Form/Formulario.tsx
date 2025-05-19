@@ -15,7 +15,8 @@ import {
   FormData,
 } from "../../validations/registration-student-schema";
 import axios from "axios";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Formulario = () => {
   const methods = useForm<FormData>({
@@ -65,6 +66,7 @@ const Formulario = () => {
             >
               Enviar
             </Button>
+            <ToastContainer position="bottom-right" autoClose={3000}/>
           </ActionsContainer>
         </FormContainer>
       </ResponsiveContainerForm>
