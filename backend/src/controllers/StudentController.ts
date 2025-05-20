@@ -1,6 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import { FastifyReply, FastifyRequest } from "fastify";
 import { completeFormSchema } from "../schemas/registration-student-schema";
+import { sendConfirmationEmail } from "../utils/sendConfirmationEmail";
 
 const prisma = new PrismaClient();
 
@@ -55,9 +56,11 @@ export async function createStudentHandler(
       },
     });
 
+    await sendConfirmationEmail(parsed.responsibleInfo.emailResponsavel, parsed.studentInfo.nomeCompleto);
+
     return reply
-      .code(201)
-      .send({ message: "Estudante cadastrado com sucesso", student });
+      .status(201)
+      .send({ message: "Pré-Matrícula recebida com sucesso!"});
   } catch (error) {
     console.error(error);
     return reply
