@@ -32,8 +32,6 @@ const Formulario = () => {
       console.error(error);
       toast.error("Houve um erro ao enviar os dados. Verifique os dados e tente novamente.");
     }
-
-    console.log(data);
   };
 
   return (

@@ -25,8 +25,8 @@ model Estudante {
   createAt       DateTime @default(now())
   updatedAt      DateTime @updatedAt
 
-  responsavel             Responsavel?
-  endereco                Endereco?
+  responsavel           Responsavel?
+  endereco              Endereco?
   informacoesAdicionais InformacoesAdicionais?
 }
 
@@ -36,6 +36,7 @@ model Responsavel {
   numeroContato   String    @db.VarChar(255)
   rg              String    @db.VarChar(255)
   cpf             String    @db.VarChar(255)
+  email           String    @db.VarChar(255)
   createAt        DateTime  @default(now())
   updatedAt       DateTime  @updatedAt
   estudante       Estudante @relation(fields: [estudanteId], references: [id])
@@ -76,7 +77,7 @@ enum Turno {
 }
 
 enum Oficina {
-  artes 
+  artes
   violao
   jiujitsu
   nivel1

@@ -37,7 +37,9 @@ export const responsibleInfo = z.object({
   nomeResponsavel: z
     .string()
     .min(3, "O nome do responsável deve ter no mínimo 3 caracteres"),
-
+  emailResponsavel: z
+    .string().email("E-mail inválido")
+    .min(1, "Este campo é obrigatório"),
   numeroContato: z
     .string()
     .regex(/^\(\d{2}\) \d{5}-\d{4}$/, "Número de contato inválido. Formato esperado: (99) 99999-9999"),
