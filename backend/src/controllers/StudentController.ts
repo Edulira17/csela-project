@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import { FastifyReply, FastifyRequest } from "fastify";
 import { completeFormSchema } from "../schemas/registration-student-schema";
-import { sendConfirmationEmail } from "../utils/sendConfirmationEmail";
+// import { sendConfirmationEmail } from "../utils/sendConfirmationEmail";
 
 const prisma = new PrismaClient();
 
@@ -57,7 +57,7 @@ export async function createStudentHandler(
       },
     });
 
-    await sendConfirmationEmail(parsed.responsibleInfo.emailResponsavel, parsed.studentInfo.nomeCompleto);
+    // await sendConfirmationEmail(parsed.responsibleInfo.emailResponsavel, parsed.studentInfo.nomeCompleto);
 
     return reply
       .status(201)
@@ -66,6 +66,6 @@ export async function createStudentHandler(
     console.error(error);
     return reply
       .status(400)
-      .send({ error: "Erro ao cadastrar estudante", details: error });
+      .send({ error: "Erro ao realizar o Pré-Cadastro", details: error });
   }
 }

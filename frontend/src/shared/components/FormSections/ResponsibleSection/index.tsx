@@ -19,9 +19,9 @@ const ResponsibleSection = () => {
       )}
       <Label>E-mail do Responsável</Label>
       <Input
-        className={errors?.responsibleInfo?.nomeResponsavel?.type && "input-error"}
+        className={errors?.responsibleInfo?.emailResponsavel?.type && "input-error"}
         type='text'
-        {...register('responsibleInfo.nomeResponsavel')}
+        {...register('responsibleInfo.emailResponsavel')}
       />
       {errors.responsibleInfo?.nomeResponsavel && (
         <span className="error-message">{errors.responsibleInfo.nomeResponsavel.message as string}</span>
