@@ -28,6 +28,7 @@ export async function createStudentHandler(
           create: {
             nomeResponsavel: parsed.responsibleInfo.nomeResponsavel,
             numeroContato: parsed.responsibleInfo.numeroContato,
+            email: parsed.responsibleInfo.emailResponsavel,
             rg: parsed.responsibleInfo.rg,
             cpf: parsed.responsibleInfo.cpf,
           },
@@ -60,7 +61,7 @@ export async function createStudentHandler(
 
     return reply
       .status(201)
-      .send({ message: "Pré-Matrícula recebida com sucesso!"});
+      .send({ message: "Pré-Matrícula recebida com sucesso!", student});
   } catch (error) {
     console.error(error);
     return reply

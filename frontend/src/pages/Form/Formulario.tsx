@@ -26,7 +26,8 @@ const Formulario = () => {
   const sendFormData = async (data: FormData) => {
     try {
       await axios.post("http://localhost:3333/api/students", data);
-      toast.success("Sua Pré-Matricula foi realizada com sucesso! Você receberá um e-mail de confirmação em instantes.")
+      // toast.success("Sua Pré-Matricula foi realizada com sucesso! Você receberá um e-mail de confirmação em instantes.")
+      console.log(data);
       methods.reset();
     } catch (error) {
       console.error(error);

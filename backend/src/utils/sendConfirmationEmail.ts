@@ -1,5 +1,4 @@
 import nodemailer from 'nodemailer';
-
 export async function sendConfirmationEmail(to: string, studentName: string){
   const transporter = nodemailer.createTransport({
     service: 'gmail',
